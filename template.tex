@@ -1,0 +1,160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 4.0 (March 21, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@latextemplates.com)
+% Linux and Unix Users Group at Virginia Tech Wiki
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+	a4paper, % Paper size, specify a4paper (A4) or letterpaper (US letter)
+	12pt, % Default font size, specify 10pt, 11pt or 12pt
+]{CSUniSchoolLabReport}
+\usepackage[ngerman]{babel}
+\usepackage{siunitx}  
+\usepackage{textcase}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{enumitem} % für präzise Kontrolle über Listen
+\usepackage{mhchem}
+\sisetup{locale = DE,  
+separate-uncertainty,  
+range-units = brackets,  
+list-units = single,  
+per-mode=symbol-or-fraction,
+}  
+\addbibresource{sample.bib} % Bibliography file (located in the same folder as the template)
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -0.2ex}%
+  {1.5ex \@plus 0.2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
+\renewcommand{\theparagraph}{\alph{paragraph})}
+\newcommand{\micro}{\ensuremath{\mu}}
+\newcommand{\pico}{p}
+\newcommand{\milli}{m}
+\newcommand{\nano}{n}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}%----------------------------------------------------------------------------------------
+%	REPORT INFORMATION
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+
+\title{Protokoll Praktikum EBau Bipolartransistor} % Report title
+
+\author{Johann \textsc{Becker} \and Valentin \textsc{Eder} \and Marc \textsc{Ostner}}
+\date{\today} % Date of the report
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Insert the title, author and date using the information specified above
+
+\begin{center}
+	\begin{tabular}{l r}
+		Date Performed: & 30. Mai 2025 \\ % Date the experiment was performed
+		
+		Instructor: & Prof. Dr. Alexandru Negut % Instructor/supervisor
+	\end{tabular}
+\end{center}
+
+% If you need to include an abstract, uncomment the lines below
+%\begin{abstract}
+%	Abstract text
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
+
+\section{Einführung}
+\subsection{Gegenstand des Versuchs}
+In diesem Versuch sollen Eigenschaften und Anwendungen des Bipolartransistors BD137-16 untersucht werden.
+\subsection{Notwendige Vorbereitungen}
+\subsubsection{Versuchsablauf}
+Die dynamische Messung der Transistorkennlinien erfolgt ähnlich zu der Messung von Diodenkennlinien.
+\subsubsection{Datenblatt}
+Der BD137-16 ist ein NPN Silizium Transistor. 
+Der "-16" Anhang steht für die dynamische Stromverstärkung $\beta_{\RNum{3}}$, in diesem Fall 100\textasciitilde 250. 
+
+\subsection{Fragen zum Verstärker}
+
+\paragraph{a) Welche Aufgabe hat der Kondensator $C_k$ und wie herum muss ein gepolter Elektrolytkondensator an dieser Stelle eingebaut werden?}
+Der Koppelkondensator $C_k$ trennt den Gleichspannungsanteil vom Signal und lässt nur das Wechselspannungssignal durch.
+Hierdurch kann ein Transistor Arbeitspunkt unabhängig von der Signalquelle $U_{sig}$ eingestellt werden. Als resultat bleibt der Großsignal Arbeitspunkt bestehen, während die Kleinsignaländerungen von $U_{sig}$ weiterhin bestehen bleiben. 
+
+
+
+Ein gepolter Elektrolytkondensator muss so eingebaut werden, dass die positive Seite an die höhere Gleichspannung angeschlossen wird.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\section{Formelzeichen}
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Symbol} & \textbf{Bedeutung} \\
+\midrule
+$C_s$    & Sperrschichtkapazität \\
+$I_c$    & Fluß- oder Vorwärtestrom \\
+$I_a$    & Sperrstrom- oder Rückwärtestrom \\
+$I_s$    & Sperrsättigungsstrom \\
+$M$      & Stufenfaktor (grading coefficient) \\
+$m$      & Emissionskoeffizient \\
+$N_a$    & Akzeptordichte \\
+$N_0$    & Donatordichte \\
+$R_a$    & Bahnwiderstand \\
+$t_0$    & Injektionszeit \\
+$t_1$    & Anstiegszeit (Risetime) \\
+$t_1$    & Sperrverzögerungszeit (Reverse Recovery Time) \\
+$t_s$    & Speicherzeit \\
+$U_0$    & Diffusionsspannung \\
+$U_c$    & Fluß- oder Vorwärtsspannung \\
+$U_s$    & Sperr- oder Rückwärtsspannung \\
+$U_{s\_5mk}$ & Durchbruchspannung an der Z-Diode bei $I_2 = 5$mA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\printbibliography % Output the bibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
