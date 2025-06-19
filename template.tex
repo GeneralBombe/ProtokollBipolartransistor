@@ -187,6 +187,34 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 	\label{fig:messschaltung4}
 \end{figure}
 
+\section{Auswertung}
+\subsection{Parameter}
+\subsubsection{Ausgangskennlinienfeld}
+\paragraph{a) Die einzelnen Kennlinien im Kennlinienfeld sind rechts schräg abgeschnitten. Verbinden Sie die Enden der Kennlinien mit einer Geraden und berechnen Sie aus deren Steigung einen Widerstandswert. Welcher Widerstand wird hier sichtbar?}
+Der Widerstand, der hier sichtbar wird, ist der sogenannte \emph{Kollektor-Emitter-Sättigungswiderstand} $r_{CE}$. Er kann aus der Steigung der Geraden, die die Enden der Kennlinien verbindet, berechnet werden:
+
+\[
+r_{CE} = \frac{\Delta U_{CE}}{\Delta I_C} = \frac{\SI{6.2}{\volt}}{\SI{0.1}{\ampere}} = \SI{62}{\ohm}
+\]
+
+wobei $\Delta U_{CE}$ die Spannungsänderung und $\Delta I_C$ die Stromänderung im betrachteten Bereich ist.
+
+
+\paragraph{b) Erstellen Sie aus dem Ausgangskennlinienfeld den Verlauf der statischen Stromverstärkung $B$ im aktiven Vorwärtsbetrieb bei $U_{CE} = 5\,\mathrm{V}$.}
+
+Die statische Stromverstärkung $B$ (auch $\beta$ genannt) berechnet sich zu $B = \frac{I_C}{I_B}$. Für jeden Messpunkt bei $U_{CE} = 5\,\mathrm{V}$ wird $I_C$ durch den zugehörigen $I_B$ geteilt und der Verlauf von $B$ über $I_B$ bzw. $I_C$ aufgetragen.
+
+\paragraph{c) Vergleichen Sie die ermittelte Stromverstärkung mit dem Wert aus dem Datenblatt.}
+
+Die gemessene Stromverstärkung $B$ sollte im Bereich des im Datenblatt angegebenen Wertes (hier $100 \sim 250$) liegen. Abweichungen können durch Messfehler oder Bauteiltoleranzen entstehen.
+
+\paragraph{d) Verlängern Sie die erste Kennlinie, die über dem Kollektorstrom $I_C$ von $100\,\mathrm{mA}$ liegt, nach rechts bis $U_{CE} = 10\,\mathrm{V}$. Bestimmen Sie damit näherungsweise die Early-Spannung $U_A$ des Transistors.}
+
+Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlinie mit der $U_{CE}$-Achse. Dazu wird die Gerade durch die Kennlinie extrapoliert und der Schnittpunkt mit $I_C = 0$ bestimmt.
+
+\paragraph{e) Zeichnen Sie in das Ausgangskennlinienfeld die Übersteuerungsgrenze ($U_{CB} = 0\,\mathrm{V}$) ein.}
+
+Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. Sie kann als Gerade im Kennlinienfeld eingezeichnet werden, typischerweise parallel zur $U_{CE}$-Achse bei entsprechendem Wert.
 
 
 \section{Formelzeichen}
