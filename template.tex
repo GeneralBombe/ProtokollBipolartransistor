@@ -119,9 +119,11 @@ Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ i
 
 
 
-
+% B.
 \section{Versuchsdurchführung}
+% B.1.
 \subsection{Kennlinien }
+% B.1.1.
 \subsubsection{Ausgangskennlinienfeld}
 
 \begin{figure}[h]
@@ -133,6 +135,7 @@ Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ i
 
 Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{\micro\ampere}$ aufgenommen.
 
+% B.1.2.
 \subsubsection{Eingangskennlinie}
 
 
@@ -145,11 +148,15 @@ Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{
 
 Für diese Messung ist wichtig, die Spannungsquelle direkt am Kollektor und Emitter anzulegen, um die Spannung so Konstant wie möglich zu halten.
 Um eine Zerstörung des Transistors bei fehlerhaften Versuchsdurchführung zu verhindern, muss die Strombegrenzung der Spannungsquelle auf \SI{250}{\milli\ampere} eingestellt werden. 
-Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt. 
-\subsubsection{Temperaturverhalten}
-\subsubsection{Übertragungskennlinie}
+Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 
+% B.1.3.
+\subsubsection{Temperaturverhalten}
+% B.1.4.
+\subsubsection{Übertragungskennlinie}
+% B.2.
 \subsection{Betrieb als Verstärker}
+% B.2.1.
 \subsubsection{Einführung}
 \begin{figure}[h]
 	\centering
@@ -157,6 +164,8 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 	\caption{Emitterschaltung zur Spannungsverstärkung.}
 	\label{fig:Messschaltung B.1.4.}
 \end{figure}
+
+% B.2.2.
 \subsubsection{Spannungsverstärkung}
 Der Arbeitspunkt für die Spannungsverstärkung wird durch die Schaltung in Abbildung~\ref{fig:messschaltung3} dargestellt.
 \begin{table}[H]
@@ -170,7 +179,7 @@ $U_{Ausgang}$ & 1   & 1   & 1    & 1    & 1
 \label{tab:my-table}
 \end{table}
 
-
+% B.2.3.
 \subsubsection{Bandbreite}
 Die untere Grenzfrequenz $f_{gu}$ und die obere Grenzfrequenz $f_{go}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
 \[
@@ -178,7 +187,9 @@ B = f_{go} - f_{gu}
 \]
 Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}} \hat{=}\SI{-3}{\decibel}$ ihres Maximalwertes im unteren Frequenzbereich abfällt, und $f_{go}$ entsprechend im oberen Frequenzbereich.
 
+% B.3.
 \subsection{Schaltanwendung}
+% B.3.1.
 \subsubsection{Grundlagen}
 \begin{figure}[H]
 	\centering
@@ -187,7 +198,9 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 	\label{fig:Messschaltung B.2.1.}
 \end{figure}
 
+% C.
 \section{Auswertung}
+% C.1.1.
 \subsection{Parameter}
 \subsubsection{Ausgangskennlinienfeld}
 \paragraph{a) Die einzelnen Kennlinien im Kennlinienfeld sind rechts schräg abgeschnitten. Verbinden Sie die Enden der Kennlinien mit einer Geraden und berechnen Sie aus deren Steigung einen Widerstandswert. Welcher Widerstand wird hier sichtbar?}
@@ -216,6 +229,7 @@ Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlini
 
 Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. Sie kann als Gerade im Kennlinienfeld eingezeichnet werden, typischerweise parallel zur $U_{CE}$-Achse bei entsprechendem Wert.
 
+% C.1.2.
 \subsubsection{Eingangskennlinie}
 
 Nun soll für einen Basisstrom von $600\,\mu\text{A}$ der Eingangswiderstand bestimmt werden.
@@ -244,6 +258,23 @@ Somit erhalten wir für $r_{BE}$:
 r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A}} = 66{,}67\,\Omega
 \end{aligned}
 \]
+
+% C.1.3.
+\subsubsection{Temperaturverhalten}
+% C.1.4.
+\subsubsection{Übertragungskennlinie}
+
+
+% C.2.
+\subsection{Verstärker}
+
+
+% C.3.
+\subsection{Schalter}
+% C.3.1.
+\subsubsection{Arbeitspunkte}
+% C.3.2.
+\subsubsection{Schaltzeiten}
 
 
 
