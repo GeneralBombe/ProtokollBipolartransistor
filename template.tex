@@ -35,6 +35,7 @@
 \usepackage{enumitem} % für präzise Kontrolle über Listen
 \usepackage{mhchem}
 \usepackage{pdfpages}
+\usepackage{float}
 \sisetup{locale = DE,  
 separate-uncertainty,  
 range-units = brackets,  
@@ -259,23 +260,54 @@ r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A
 \end{aligned}
 \]
 
-% C.1.3.
 \subsubsection{Temperaturverhalten}
-% C.1.4.
-\subsubsection{Übertragungskennlinie}
+\subsubsection{Übertragunskennlinie}
+\subsubsection{Verstärker}
 
 
-% C.2.
-\subsection{Verstärker}
+\paragraph{a) Zeichnen Sie die Arbeitsgerade des Verstärkers durch den Arbeitspunkt I C = 20 mA in das Ausgangskenn-
+linienfeld ein. Markieren Sie die Schwingungsbereiche des Kollektorstroms auf der I C-Achse, sowie der
+Ausgangsspannung auf der U CE-Achse. Verwenden Sie dazu den in B.2.2 gemessenen Spitze-Tal-Wert der
+Ausgangsspannung im verzerrungsfreien Betrieb.}
 
+\paragraph{b) Erklären Sie, warum das Ausgangssignal bei zu großen Eingangsamplituden nicht mehr sinusförmig ist.}
+Bei zu großen Eingangsamplituden verlässt der Transistor den linearen Arbeitsbereich. Das Ausgangssignal wird dann an den Versorgungsspannungen begrenzt, sodass die Signalform verzerrt wird (siehe Abbildung~\ref{fig:supplyrailskrass}). Bereits bei geringeren Amplituden kann es durch die nichtlineare Eingangskennlinie (Abbildung~\ref{fig:Eingangskennlinie}) zu Verzerrungen kommen. Die maximale unverzerrte Ausgangsamplitude hängt daher sowohl von der Versorgungsspannung als auch von der Steilheit der $I_B(U_{BE})$-Kennlinie im Arbeitspunkt ab.  
+Für Spannungen des Eingangssignal unterhalb dessen Mittelwert ist eine Abflachung des Verstärkten Signal früher zu erkennen, weil der Transistor für diese Spannungen im Sättigungsbereich arbeitet. Deshalb ist der Schnitt unten am verstärkten Signal eher Abgerundet. 
 
-% C.3.
+\paragraph{c) Tragen Sie die Spannungsverstärkung über dem Kollektor-Ruhestrom auf.}
+Die Spannungsverstärkung $v_u$ berechnet sich als Verhältnis der Ausgangs- zur Eingangsamplitude:
+\[
+v_u = \frac{u_{pp-{Ausgang}}}{u_{pp-{Eingang}}}
+\]
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+$I_C$                  & 2mA                     & 5mA                & 10mA               & 15mA               & 20mA               \\ \hline
+$\hat{u}_{pp-Eingang}$ &
+  $\SI{9.9}{\milli\volt}$ &
+  $\SI{9.7}{\milli\volt}$ &
+  $\SI{9.3}{\milli\volt}$ &
+  $\SI{8.9}{\milli\volt}$ &
+  $\SI{8.6}{\milli\volt}$ \\ \hline
+$\hat{u}_{pp-Ausgang}$ & $\SI{749}{\milli\volt}$ & $\SI{1.75}{\volt}$ & $\SI{3.25}{\volt}$ & $\SI{4.45}{\volt}$ & $\SI{5.53}{\volt}$ \\ \hline
+\multicolumn{1}{l|}{$v_u$} &
+  \multicolumn{1}{l|}{$75.7$} &
+  \multicolumn{1}{l|}{$180.4$} &
+  \multicolumn{1}{l|}{$349.5$} &
+  \multicolumn{1}{l|}{$500.0$} &
+  \multicolumn{1}{l}{$643.0$}
+\end{tabular}
+\caption{Aus und Eingangsamplituden bei Verschiedenen Kollektorströmen.}
+\label{spannungsverstrkung}
+\end{table}
+
+\paragraph{d) Berechnen Sie mit der Steilheit aus C.1.4 die erwartbare Spannungsverstärkung für den Arbeitspunkt
+IC = 20 mA mit R C = 1 kW und vergleichen Sie diese mit der in B.2.2 erreichten Spannungsverstärkung bei
+IC = 20 mA.}
+
 \subsection{Schalter}
-% C.3.1.
 \subsubsection{Arbeitspunkte}
-% C.3.2.
 \subsubsection{Schaltzeiten}
-
 
 
 \section{Formelzeichen}
