@@ -75,7 +75,7 @@ per-mode=symbol-or-fraction,
 
 \begin{center}
 	\begin{tabular}{l r}
-		Date Performed: & 30. Mai 2025 \\ % Date the experiment was performed
+		Date Performed: & 20. Juni 2025 \\ % Date the experiment was performed
 		
 		Instructor: & Prof. Dr. Alexandru Negut % Instructor/supervisor
 	\end{tabular}
@@ -142,12 +142,6 @@ Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{
 	\caption{Messschaltung zur Aufnahme der Eingangskennlinie des BD137-16.}
 	\label{fig:Messschaltung B.1.2.}
 \end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/scope_5}
-	\caption{Eingangskennlinie des Transistor.}
-	\label{fig:Eingangskennlinie}
-\end{figure}
 
 Für diese Messung ist wichtig, die Spannungsquelle direkt am Kollektor und Emitter anzulegen, um die Spannung so Konstant wie möglich zu halten.
 Um eine Zerstörung des Transistors bei fehlerhaften Versuchsdurchführung zu verhindern, muss die Strombegrenzung der Spannungsquelle auf \SI{250}{\milli\ampere} eingestellt werden. 
@@ -164,12 +158,6 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 	\label{fig:Messschaltung B.1.4.}
 \end{figure}
 \subsubsection{Spannungsverstärkung}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/supplyrailskrass.png}
-	\caption{Begrenzung des Ausgangssignals durch die Versorgungsspannung.}
-	\label{fig:supplyrailskrass}
-\end{figure}
 Der Arbeitspunkt für die Spannungsverstärkung wird durch die Schaltung in Abbildung~\ref{fig:messschaltung3} dargestellt.
 \begin{table}[H]
 \centering
@@ -227,30 +215,36 @@ Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlini
 \paragraph{e) Zeichnen Sie in das Ausgangskennlinienfeld die Übersteuerungsgrenze ($U_{CB} = 0\,\mathrm{V}$) ein.}
 
 Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. Sie kann als Gerade im Kennlinienfeld eingezeichnet werden, typischerweise parallel zur $U_{CE}$-Achse bei entsprechendem Wert.
+
 \subsubsection{Eingangskennlinie}
-\subsubsection{Temperaturverhalten}
-\subsubsection{Übertragunskennlinie}
-\subsubsection{Verstärker}
 
+Nun soll für einen Basisstrom von $600\,\mu\text{A}$ der Eingangswiderstand bestimmt werden.
 
-\paragraph{a) Zeichnen Sie die Arbeitsgerade des Verstärkers durch den Arbeitspunkt I C = 20 mA in das Ausgangskenn-
-linienfeld ein. Markieren Sie die Schwingungsbereiche des Kollektorstroms auf der I C-Achse, sowie der
-Ausgangsspannung auf der U CE-Achse. Verwenden Sie dazu den in B.2.2 gemessenen Spitze-Tal-Wert der
-Ausgangsspannung im verzerrungsfreien Betrieb.}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/scope_5 C.1.2..jpg}
+	\caption{Bestimmung von $\Delta U_{BE}$ und $\Delta I_B$}
+	\label{fig:Geradennäherung von r_BE}
+\end{figure}
 
-\paragraph{b) Erklären Sie, warum das Ausgangssignal bei zu großen Eingangsamplituden nicht mehr sinusförmig ist.}
-Wenn die Arbeitspunktspannung des Transistor genau zwischen der Versorgungsspannung und dem Bezugspotential lieght, ist der Ausgangssteuerungsbereich am größten. Ist die Eingangsamplitude zu groß, wird das Signal, welches eigentlich über bzw. unterhalb der Versorgungsschienen liegt auf jeweils dessen Spannungsnieveau abgeschnitten, wie in  Abbildung~\ref{fig:supplyrailskrass} zu sehen. 
-Um die Abweichungen bei schon deutlich niedrigeren Amplituden zu erklären, ist es hilfreich die Eingangskennlinie in Abbildung \ref{fig:Eingangskennlinie} zu betrachteten. Bei einem Eingangssignal mit einer Amplitude in $U_V$ verhält sich die Verstärkung linear.
+In Abbildung \ref{fig:Geradennäherung von r_BE} wurden bei $I_{B}$ folgende Werte für $\Delta U_{BE}$ und $\Delta I_B$ extrapoliert:
 
+\[
+\begin{aligned}
+I_B = 600\,\mu\text{A}, \quad \Delta U_{BE} \approx 50\,\text{mV}, \quad \Delta I_B \approx 750\,\mu\text{A} \\
+\end{aligned}
+\]
 
-\paragraph{c) Tragen Sie die Spannungsverstärkung über dem Kollektor-Ruhestrom auf.}
-\paragraph{d) Berechnen Sie mit der Steilheit aus C.1.4 die erwartbare Spannungsverstärkung für den Arbeitspunkt
-IC = 20 mA mit R C = 1 kW und vergleichen Sie diese mit der in B.2.2 erreichten Spannungsverstärkung bei
-IC = 20 mA.}
+\vspace{1em}
 
-\subsection{Schalter}
-\subsubsection{Arbeitspunkte}
-\subsubsection{Schaltzeiten}
+Somit erhalten wir für $r_{BE}$:
+
+\[
+\begin{aligned}
+r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A}} = 66{,}67\,\Omega
+\end{aligned}
+\]
+
 
 
 \section{Formelzeichen}
