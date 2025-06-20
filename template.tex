@@ -34,6 +34,7 @@
 \usepackage{array}
 \usepackage{enumitem} % für präzise Kontrolle über Listen
 \usepackage{mhchem}
+\usepackage{pdfpages}
 \sisetup{locale = DE,  
 separate-uncertainty,  
 range-units = brackets,  
@@ -71,12 +72,6 @@ per-mode=symbol-or-fraction,
 
 \maketitle % Insert the title, author and date using the information specified above
 
-\begin{figure}[H] % [H] forces the figure to be placed exactly where it appears in the text
-	\centering % Horizontally center the figure
-	\includegraphics[width=0.7\textwidth]{image_johann} % Include the figure, now larger
-	\caption{geeeeeee geeeeeeee tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung tung }
-\end{figure}
-
 
 \begin{center}
 	\begin{tabular}{l r}
@@ -106,7 +101,7 @@ Der BD137-16 ist ein NPN Silizium Transistor.
 Der "-16" Anhang steht für die dynamische Stromverstärkung $\beta_{\RNum{3}}$, in diesem Fall 100\textasciitilde 250. 
 
 \subsection{Fragen zum Verstärker}
-
+Hier nicht ausgeführte Fragen finden sich im Anhang.
 \paragraph{a) Welche Aufgabe hat der Kondensator $C_k$ und wie herum muss ein gepolter Elektrolytkondensator an dieser Stelle eingebaut werden?}
 Der Koppelkondensator $C_k$ trennt den Gleichspannungsanteil vom Signal und lässt nur das Wechselspannungssignal durch.
 Hierdurch kann ein Transistor Arbeitspunkt unabhängig von der Signalquelle $U_{sig}$ eingestellt werden. Als resultat bleibt der Großsignal Arbeitspunkt bestehen, während die Kleinsignaländerungen von $U_{sig}$ weiterhin bestehen bleiben. 
@@ -116,27 +111,114 @@ Hierdurch kann ein Transistor Arbeitspunkt unabhängig von der Signalquelle $U_{
 Ein gepolter Elektrolytkondensator muss so eingebaut werden, dass die positive Seite an die höhere Gleichspannung angeschlossen wird.
 
 
+\paragraph{e) Auf welchen Wert sollte der ausgangsseitige Arbeitspunkt $U_{CE}$ eines Verstärkers in Emitterschaltung sinnvollerweise eingestellt werden? }
+
+Der Arbeitspunkt sollte in der "Safe Operation Area" eingestellt werden, um die Verstärkung möglichst wenig zu Verzerren. Also sollte $U_{CE}$ überhablb des Sättigungsbereichs liegen, aber unter der maximalen ableitbaren Leistung. 
+Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ im Mittel dieser beiden Spannungen $U_{CE\,\text{Sättigung}}$ und $U_{CE\,\text{PMax}}$ liegen.
 
 
 
 
 
+\section{Versuchsdurchführung}
+\subsection{Kennlinien }
+\subsubsection{Ausgangskennlinienfeld}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung1.png}
+	\caption{Messschaltung zur Aufnahme des Ausgangskennlinienfeldes des BD137-16.}
+	\label{fig:messschaltung1}
+\end{figure}
+
+Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{\micro\ampere}$ aufgenommen.
+
+\subsubsection{Eingangskennlinie}
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung2.png}
+	\caption{Messschaltung zur Aufnahme der Eingangskennlinie des BD137-16.}
+	\label{fig:messschaltung2}
+\end{figure}
+
+Für diese Messung ist wichtig, die Spannungsquelle direkt am Kollektor und Emitter anzulegen, um die Spannung so Konstant wie möglich zu halten.
+Um eine Zerstörung des Transistors bei fehlerhaften Versuchsdurchführung zu verhindern, muss die Strombegrenzung der Spannungsquelle auf \SI{250}{\milli\ampere} eingestellt werden. 
+Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt. 
+\subsubsection{Temperaturverhalten}
+\subsubsection{Übertragungskennlinie}
+
+\subsection{Betrieb als Verstärker}
+\subsubsection{Einführung}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung3.png}
+	\caption{Emitterschaltung zur Spannungsverstärkung.}
+	\label{fig:messschaltung3}
+\end{figure}
+\subsubsection{Spannungsverstärkung}
+Der Arbeitspunkt für die Spannungsverstärkung wird durch die Schaltung in Abbildung~\ref{fig:messschaltung3} dargestellt.
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+$I_{C}$      & 2mA & 5mA & 10mA & 15mA & 20mA \\ \hline
+$U_{Eingang}$ & 1   & 1   & 1    & 1    & 1    \\ \hline
+$U_{Ausgang}$ & 1   & 1   & 1    & 1    & 1   
+\end{tabular}
+\caption{Aus und Eingangsamplituden bei Verschiedenen Kollektorströmen- }
+\label{tab:my-table}
+\end{table}
 
 
+\subsubsection{Bandbreite}
+Die untere Grenzfrequenz $f_{gu}$ und die obere Grenzfrequenz $f_{go}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
+\[
+B = f_{go} - f_{gu}
+\]
+Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}} \hat{=}\SI{-3}{\decibel}$ ihres Maximalwertes im unteren Frequenzbereich abfällt, und $f_{go}$ entsprechend im oberen Frequenzbereich.
+
+\subsection{Schaltanwendung}
+\subsubsection{Grundlagen}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung4.png}
+	\caption{Messschaltung für Charakterisierung des Transistor als Schalter.}
+	\label{fig:messschaltung4}
+\end{figure}
+
+\section{Auswertung}
+\subsection{Parameter}
+\subsubsection{Ausgangskennlinienfeld}
+\paragraph{a) Die einzelnen Kennlinien im Kennlinienfeld sind rechts schräg abgeschnitten. Verbinden Sie die Enden der Kennlinien mit einer Geraden und berechnen Sie aus deren Steigung einen Widerstandswert. Welcher Widerstand wird hier sichtbar?}
+Der Widerstand, der hier sichtbar wird, ist der sogenannte \emph{Kollektor-Emitter-Sättigungswiderstand} $r_{CE}$. Er kann aus der Steigung der Geraden, die die Enden der Kennlinien verbindet, berechnet werden:
+
+\[
+r_{CE} = \frac{\Delta U_{CE}}{\Delta I_C} = \frac{\SI{6.2}{\volt}}{\SI{0.1}{\ampere}} = \SI{62}{\ohm}
+\]
+
+wobei $\Delta U_{CE}$ die Spannungsänderung und $\Delta I_C$ die Stromänderung im betrachteten Bereich ist.
 
 
+\paragraph{b) Erstellen Sie aus dem Ausgangskennlinienfeld den Verlauf der statischen Stromverstärkung $B$ im aktiven Vorwärtsbetrieb bei $U_{CE} = 5\,\mathrm{V}$.}
 
+Die statische Stromverstärkung $B$ (auch $\beta$ genannt) berechnet sich zu $B = \frac{I_C}{I_B}$. Für jeden Messpunkt bei $U_{CE} = 5\,\mathrm{V}$ wird $I_C$ durch den zugehörigen $I_B$ geteilt und der Verlauf von $B$ über $I_B$ bzw. $I_C$ aufgetragen.
 
+\paragraph{c) Vergleichen Sie die ermittelte Stromverstärkung mit dem Wert aus dem Datenblatt.}
 
+Die gemessene Stromverstärkung $B$ sollte im Bereich des im Datenblatt angegebenen Wertes (hier $100 \sim 250$) liegen. Abweichungen können durch Messfehler oder Bauteiltoleranzen entstehen.
 
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+\paragraph{d) Verlängern Sie die erste Kennlinie, die über dem Kollektorstrom $I_C$ von $100\,\mathrm{mA}$ liegt, nach rechts bis $U_{CE} = 10\,\mathrm{V}$. Bestimmen Sie damit näherungsweise die Early-Spannung $U_A$ des Transistors.}
+
+Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlinie mit der $U_{CE}$-Achse. Dazu wird die Gerade durch die Kennlinie extrapoliert und der Schnittpunkt mit $I_C = 0$ bestimmt.
+
+\paragraph{e) Zeichnen Sie in das Ausgangskennlinienfeld die Übersteuerungsgrenze ($U_{CB} = 0\,\mathrm{V}$) ein.}
+
+Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. Sie kann als Gerade im Kennlinienfeld eingezeichnet werden, typischerweise parallel zur $U_{CE}$-Achse bei entsprechendem Wert.
+
 
 \section{Formelzeichen}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \begin{tabular}{ll}
 \toprule
@@ -166,5 +248,6 @@ $U_{s\_5mk}$ & Durchbruchspannung an der Z-Diode bei $I_2 = 5$mA \\
 \printbibliography % Output the bibliography
 
 %----------------------------------------------------------------------------------------
+\includepdf[pages={1}]{Vorbereitung.pdf}
 
 \end{document}
