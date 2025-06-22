@@ -134,6 +134,12 @@ Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ i
 	\caption{Messschaltung zur Aufnahme des Ausgangskennlinienfeldes des BD137-16.}
 	\label{fig:MessschaltungAusgangskennlinienfeld}
 \end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/Ausgangskennlinienfeld.png}
+	\caption{Gemessenes Ausgangskennlinienfeld.}
+	\label{fig:Ausgangskennlinienfeld}
+\end{figure}
 
 Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{\micro\ampere}$ aufgenommen.
 
@@ -147,9 +153,9 @@ Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Figures/scope5bearb.jpg}
+	\includegraphics[width=1\textwidth]{Figures/Eingangskennlinie.jpg}
 	\caption{Bestimmung von $\Delta U_{BE}$ und $\Delta I_B$}
-	\label{fig:Geradennäherung von r_BE}
+	\label{fig:Eingangskennlinie}
 \end{figure}
 
 
@@ -160,6 +166,18 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 
 % B.1.3.
 \subsubsection{Temperaturverhalten}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/TemperaturHysterese8V0.1hznah.png}
+	\caption{Temperaturverhalten des BD137-16 bei $U_{CE} = 8\,\mathrm{V}$ und $f = 0{,}1\,\mathrm{Hz}$.}
+	\label{fig:8VTemperaturHysterese0.1hznah}
+\end{figure}\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/8V1khz0.1hzzusammentemp.png}
+	\caption{Temperaturverhalten des BD137-16 bei $U_{CE} = 8\,\mathrm{V}$ und $f = 0{,}1\,\mathrm{Hz}$.}
+	\label{fig:8V1khz0.1hzzusammentemp}
+\end{figure}
+
 % B.1.4.
 \subsubsection{Übertragungskennlinie}
 % B.2.
@@ -250,7 +268,7 @@ Nun soll für einen Basisstrom von $600\,\mu\text{A}$ der Eingangswiderstand bes
 
 
 
-In Abbildung \ref{fig:Geradennäherung von r_BE} wurden bei $I_{B}$ folgende Werte für $\Delta U_{BE}$ und $\Delta I_B$ extrapoliert:
+In Abbildung \ref{fig:Eingangskennlinie} wurden bei $I_{B}$ folgende Werte für $\Delta U_{BE}$ und $\Delta I_B$ extrapoliert:
 
 \[
 \begin{aligned}
