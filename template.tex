@@ -36,6 +36,7 @@
 \usepackage{mhchem}
 \usepackage{pdfpages}
 \usepackage{float}
+\usepackage{csquotes} % Recommended for biblatex with babel/polyglossia
 \sisetup{locale = DE,  
 separate-uncertainty,  
 range-units = brackets,  
@@ -129,23 +130,29 @@ Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ i
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung B.1.1..png}
+	\includegraphics[width=0.7\textwidth]{Figures/MessschaltungAusgangskennlinienfeld.png}
 	\caption{Messschaltung zur Aufnahme des Ausgangskennlinienfeldes des BD137-16.}
-	\label{fig:Messschaltung B.1.1.}
+	\label{fig:MessschaltungAusgangskennlinienfeld}
 \end{figure}
 
 Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{\micro\ampere}$ aufgenommen.
 
 % B.1.2.
 \subsubsection{Eingangskennlinie}
-
-
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung B.1.2..png}
+	\includegraphics[width=0.7\textwidth]{Figures/MessschaltungEingangskennlinie.png}
 	\caption{Messschaltung zur Aufnahme der Eingangskennlinie des BD137-16.}
-	\label{fig:Messschaltung B.1.2.}
+	\label{fig:MessschaltungEingangskennlinie}
 \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Figures/scope5bearb.jpg}
+	\caption{Bestimmung von $\Delta U_{BE}$ und $\Delta I_B$}
+	\label{fig:Geradennäherung von r_BE}
+\end{figure}
+
+
 
 Für diese Messung ist wichtig, die Spannungsquelle direkt am Kollektor und Emitter anzulegen, um die Spannung so Konstant wie möglich zu halten.
 Um eine Zerstörung des Transistors bei fehlerhaften Versuchsdurchführung zu verhindern, muss die Strombegrenzung der Spannungsquelle auf \SI{250}{\milli\ampere} eingestellt werden. 
@@ -161,14 +168,14 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 \subsubsection{Einführung}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung B.1.4..png}
+	\includegraphics[width=0.7\textwidth]{Figures/MessschaltungVerstärker.png}
 	\caption{Emitterschaltung zur Spannungsverstärkung.}
-	\label{fig:Messschaltung B.1.4.}
+	\label{fig:MessschaltungVerstärker}
 \end{figure}
 
 % B.2.2.
 \subsubsection{Spannungsverstärkung}
-Der Arbeitspunkt für die Spannungsverstärkung wird durch die Schaltung in Abbildung~\ref{fig:messschaltung3} dargestellt.
+Der Arbeitspunkt für die Spannungsverstärkung wird durch die Schaltung in Abbildung~\ref{fig:MessschaltungVerstärker} dargestellt.
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c|c|c|c|c}
@@ -179,7 +186,13 @@ $U_{Ausgang}$ & 1   & 1   & 1    & 1    & 1
 \caption{Aus und Eingangsamplituden bei Verschiedenen Kollektorströmen- }
 \label{tab:my-table}
 \end{table}
-
+\subsubsection{Grundlagen}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/supplyrailskrass.png}
+	\caption{Abgeschnittenes Ausgangssignal.}
+	\label{fig:supplyrailskrass}
+\end{figure}
 % B.2.3.
 \subsubsection{Bandbreite}
 Die untere Grenzfrequenz $f_{gu}$ und die obere Grenzfrequenz $f_{go}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
@@ -194,9 +207,9 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 \subsubsection{Grundlagen}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Figures/Messschaltung B.2.1..png}
+	\includegraphics[width=0.7\textwidth]{Figures/MessschaltungSchaltanwendung.png}
 	\caption{Messschaltung für Charakterisierung des Transistor als Schalter.}
-	\label{fig:Messschaltung B.2.1.}
+	\label{fig:MessschaltungSchaltanwendung}
 \end{figure}
 
 % C.
@@ -235,12 +248,7 @@ Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. 
 
 Nun soll für einen Basisstrom von $600\,\mu\text{A}$ der Eingangswiderstand bestimmt werden.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Figures/scope_5 C.1.2..jpg}
-	\caption{Bestimmung von $\Delta U_{BE}$ und $\Delta I_B$}
-	\label{fig:Geradennäherung von r_BE}
-\end{figure}
+
 
 In Abbildung \ref{fig:Geradennäherung von r_BE} wurden bei $I_{B}$ folgende Werte für $\Delta U_{BE}$ und $\Delta I_B$ extrapoliert:
 
@@ -265,10 +273,27 @@ r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A
 \subsubsection{Verstärker}
 
 
-\paragraph{a) Zeichnen Sie die Arbeitsgerade des Verstärkers durch den Arbeitspunkt I C = 20 mA in das Ausgangskenn-
-linienfeld ein. Markieren Sie die Schwingungsbereiche des Kollektorstroms auf der I C-Achse, sowie der
-Ausgangsspannung auf der U CE-Achse. Verwenden Sie dazu den in B.2.2 gemessenen Spitze-Tal-Wert der
-Ausgangsspannung im verzerrungsfreien Betrieb.}
+\paragraph{a) Zeichnen Sie die Arbeitsgerade des Verstärkers durch den Arbeitspunkt $I_C = \SI{20}{\milli\ampere}$ in das Ausgangskennlinienfeld ein. Markieren Sie die Schwingungsbereiche des Kollektorstroms auf der $I_C$-Achse sowie der Ausgangsspannung auf der $U_{CE}$-Achse. Verwenden Sie dazu den in B.2.2 gemessenen Spitze-Tal-Wert der Ausgangsspannung im verzerrungsfreien Betrieb.}
+
+Die lineare Quellkennlinie beschreibt den Zusammenhang zwischen Kollektorstrom $I_C$ und Kollektor-Emitter-Spannung $U_{CE}$ für einen gegebenen Arbeitswiderstand $R_C$ und eine Versorgungsspannung $U_{o2}$:
+
+\[
+I_C(U_{CE}) = \frac{U_{o2} - U_{CE}}{R_C}
+\]
+
+Für $U_{CE} = \SI{0}{\volt}$ ergibt sich:
+
+\[
+I_C(\SI{0}{\volt}) = \frac{\SI{20}{\volt}}{\SI{1}{\kilo\ohm}} = \SI{20}{\milli\ampere}
+\]
+
+Für $U_{CE} = \SI{10}{\volt}$ ergibt sich:
+
+\[
+I_C(10\,\mathrm{V}) = \frac{\SI{20}{\volt}- \SI{10}{\volt}}{\SI{1}{\kilo\ohm}} = \SI{10}{\milli\ampere}
+\]
+
+Die Arbeitsgerade verläuft also von $(U_{CE}, I_C) = (\SI{0}{\volt}, \SI{20}{\milli\ampere})$ durch $(\SI{10}{\volt}, \SI{10}{\milli\ampere})$.
 
 \paragraph{b) Erklären Sie, warum das Ausgangssignal bei zu großen Eingangsamplituden nicht mehr sinusförmig ist.}
 Bei zu großen Eingangsamplituden verlässt der Transistor den linearen Arbeitsbereich. Das Ausgangssignal wird dann an den Versorgungsspannungen begrenzt, sodass die Signalform verzerrt wird (siehe Abbildung~\ref{fig:supplyrailskrass}). Bereits bei geringeren Amplituden kann es durch die nichtlineare Eingangskennlinie (Abbildung~\ref{fig:Eingangskennlinie}) zu Verzerrungen kommen. Die maximale unverzerrte Ausgangsamplitude hängt daher sowohl von der Versorgungsspannung als auch von der Steilheit der $I_B(U_{BE})$-Kennlinie im Arbeitspunkt ab.  
@@ -300,6 +325,13 @@ $\hat{u}_{pp-Ausgang}$ & $\SI{749}{\milli\volt}$ & $\SI{1.75}{\volt}$ & $\SI{3.2
 \caption{Aus und Eingangsamplituden bei Verschiedenen Kollektorströmen.}
 \label{spannungsverstrkung}
 \end{table}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/vuplot.png}
+	\caption{Spannungsverstärkung über Kollektorstrom.}
+	\label{fig:vuplot}
+\end{figure}
+
 
 \paragraph{d) Berechnen Sie mit der Steilheit aus C.1.4 die erwartbare Spannungsverstärkung für den Arbeitspunkt
 IC = 20 mA mit R C = 1 kW und vergleichen Sie diese mit der in B.2.2 erreichten Spannungsverstärkung bei
@@ -338,7 +370,7 @@ $U_{s\_5mk}$ & Durchbruchspannung an der Z-Diode bei $I_2 = 5$mA \\
 \end{tabular}
 \end{table}
 
-\printbibliography % Output the bibliography
+%\printbibliography % Output the bibliography
 
 %----------------------------------------------------------------------------------------
 \includepdf[pages={1}]{Vorbereitung.pdf}
