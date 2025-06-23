@@ -407,6 +407,8 @@ IC = 20 mA.}
 \subsection{Schalter}
 \subsubsection{Arbeitspunkte}
 
+\paragraph{a)}
+
 Um die verschiedenen Arbeitspunkte zu bestimmen wurde eine Arbeitsgerade in das Ausgangskennlinienfeld gelegt. Die beiden Punkte hierfür erhält man indem man den Transistor im Sperr- und Sättigungsbereich betrachtet:
 
 \begin{align*}
@@ -414,21 +416,63 @@ Um die verschiedenen Arbeitspunkte zu bestimmen wurde eine Arbeitsgerade in das 
 \text{Punkt 2:} \quad & U_{CE} = 0 \,\, (\text{da Kurzschluss}) \Rightarrow I_C = \frac{10\,\text{V}}{100\,\Omega} = 100\,\text{mA}
 \end{align*}
 
+\vspace{1em}
+
 Anschleißend wurden folgende Werte entnommen (siehe Abbildung~\ref{fig:arbeitspunkte schaltkonfiguration}):
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c|c|c|c}
- & Wert 1 & Wert 2 & Wert 3 & Wert 4 & Wert 5 \\ \hline
-$I_{C}$ (mA) & 0 & 18.5 & 36 & 51 & 71 \\ \hline
-$I_{B}$ (µA) & 0 & 100 & 200 & 300 & 400 \\ \hline
-$\beta = \frac{I_C}{I_B}$ & 0 & 185 & 180 & 170 & 177.5 \\ \hline
-$U_{CE}$ (V) & 10 & 8.2 & 6.5 & 4.8 & 3.1
+\begin{tabular}{c|c|c|c|c}
+$I_B$ (µA) & $U_{CE}$ (in V) & $U_{CE}$ (in V) & $I_C$ (in mA) & $\beta = \frac{I_C}{I_B}$ \\ \hline
+600 & 0,2 & **vergleichswerte** &  &  \\ \hline
+500 & 1,35 &  &  &  \\ \hline
+400 & 3,0 &  &  &  \\ \hline
+300 & 4,8 &  &  &  **vergleichswerte**
 \end{tabular}
-\caption{Arbeitspunkte des Transistors in Schaltanwendung}
+\caption{Auswertung der Arbeitspunkte bei verschiedenen Basisströmen}
 \label{tab:arbeitspunkte}
 \end{table}
 
+Die gemessenen Werte stimmen im Rahmen der Zeichen- und Messgenauigkeit überein.
+
+\paragraph{b)}
+*** ACHTUNG RECHNUNG MIT PROVISORISCHEN WERTEN, MÜSSEN NOCH AUSGEBESSERT WERDEN***\\
+
+Ideale Schalterleistung:
+
+\[
+P_L = \frac{U_0^2}{R_L} = \frac{(10\,\text{V})^2}{100\,\Omega} = 1\,\text{W}
+\]
+
+Transistor als Schalter:
+
+\[
+P_L = \frac{(U_0 - U_{CE})^2}{R_L}
+\]
+\vspace{1em}
+\[
+P_{(I_B = 0{,}6\,\text{mA})} = \frac{(10\,\text{V} - 192{,}59\,\text{mV})^2}{100\,\Omega} = 96{,}785\,\text{mW}
+\]
+\vspace{1em}
+\[
+\rightarrow P_{(I_B = 0{,}5\,\text{mA})} = 725{,}65\,\text{mW}
+\]
+\[
+\rightarrow P_{(I_B = 0{,}4\,\text{mA})} = 474{,}57\,\text{mW}
+\]
+
+\vspace{1em}
+
+Für ein steigendes $I_B$ wird der Transistor somit immer mehr zu einem idealen Schalter.
+
+
+\subsubsection{Schaltzeiten}
+
+\paragraph{a)}
+
+
+
+\paragraph{b)}
 
 
 \section{Formelzeichen}
