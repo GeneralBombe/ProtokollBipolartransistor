@@ -235,6 +235,17 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 % C.1.1.
 \subsection{Parameter}
 \subsubsection{Ausgangskennlinienfeld}
+
+% hier das andere mit den restlichen werten
+
+% Ausgangskennlinie für C.3.1 a
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/scope_4_eingangskennlinie_C.3.1..jpg}
+	\caption{Bestimmung der Arbeitspunkte des Transistors in Schaltkonfiguration.}
+	\label{fig:arbeitspunkte schaltkonfiguration}
+\end{figure}
+
 \paragraph{a) Die einzelnen Kennlinien im Kennlinienfeld sind rechts schräg abgeschnitten. Verbinden Sie die Enden der Kennlinien mit einer Geraden und berechnen Sie aus deren Steigung einen Widerstandswert. Welcher Widerstand wird hier sichtbar?}
 Der hier sichtbare Widerstand ist durch die Wiederstände in Reihe mit dem Kollektor zurückzuführen. Die kürzeren Kennlinien bei höheren Basisströmen, liegt an dem geringeren Spannungsabfall $U_{CE}$, welche jetzt an $R_C + R_{gen}$ abfällt. 
 \[
@@ -314,6 +325,18 @@ P_{\SI{8}{\volt}} = \SI{8}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{1.
 
 
 \subsubsection{Übertragunskennlinie}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/Übertragungskennlinie.png}
+	\caption{Übertragungskennlinie.}
+	\label{fig:Übertragungskennlinie}
+\end{figure}
+\[
+g_m \approx \frac{\Delta I_C}{\Delta U_{BE}} = \frac{30\,\mathrm{mA}}{52\,\mathrm{mV}} = 0{,}576923\,\mathrm{S}
+\]
+\[
+g_{\text{m, theoretisch}} = \frac{I_{\text{C}}}{U_{\text{T}}} = \frac{20\,\text{mA}}{25.8\,\text{mV}} = 0.775194\,\text{S}
+\]
 \subsubsection{Verstärker}
 
 
@@ -390,6 +413,8 @@ Um die verschiedenen Arbeitspunkte zu bestimmen wurde eine Arbeitsgerade in das 
 \text{Punkt 1:} \quad & I_C = 0 \Rightarrow U_{CE} = U_{02} = 10\,\text{V} \\
 \text{Punkt 2:} \quad & U_{CE} = 0 \,\, (\text{da Kurzschluss}) \Rightarrow I_C = \frac{10\,\text{V}}{100\,\Omega} = 100\,\text{mA}
 \end{align*}
+
+Anschleißend wurden folgende Werte entnommen (siehe Abbildung~\ref{fig:arbeitspunkte schaltkonfiguration}):
 
 \begin{table}[H]
 \centering
