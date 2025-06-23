@@ -252,7 +252,16 @@ Die statische Stromverstärkung $B$ (auch $\beta$ genannt) berechnet sich zu $B 
 \paragraph{c) Vergleichen Sie die ermittelte Stromverstärkung mit dem Wert aus dem Datenblatt.}
 
 Die gemessene Stromverstärkung $B$ sollte im Bereich des im Datenblatt angegebenen Wertes (hier $100 \sim 250$) liegen. Abweichungen können durch Messfehler oder Bauteiltoleranzen entstehen.
-
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+$I_{C}$ & 0mA   & 18.5mA   & 36mA    & 51mA    & 71mA    \\ \hline
+$I_{B}$ & 0µA & 100µA & 200µA & 300µA & 400µA \\ \hline
+$beta_{IC/IB}$ & 0   & 185   & 180    & 170    & 177.5   
+\end{tabular}
+\caption{Stromverstärkung }
+\label{tab:my-table}
+\end{table}
 \paragraph{d) Verlängern Sie die erste Kennlinie, die über dem Kollektorstrom $I_C$ von $100\,\mathrm{mA}$ liegt, nach rechts bis $U_{CE} = 10\,\mathrm{V}$. Bestimmen Sie damit näherungsweise die Early-Spannung $U_A$ des Transistors.}
 
 Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlinie mit der $U_{CE}$-Achse. Dazu wird die Gerade durch die Kennlinie extrapoliert und der Schnittpunkt mit $I_C = 0$ bestimmt.
