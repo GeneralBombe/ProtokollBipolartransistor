@@ -383,7 +383,27 @@ IC = 20 mA.}
 
 \subsection{Schalter}
 \subsubsection{Arbeitspunkte}
-\subsubsection{Schaltzeiten}
+
+Um die verschiedenen Arbeitspunkte zu bestimmen wurde eine Arbeitsgerade in das Ausgangskennlinienfeld gelegt. Die beiden Punkte hierfür erhält man indem man den Transistor im Sperr- und Sättigungsbereich betrachtet:
+
+\begin{align*}
+\text{Punkt 1:} \quad & I_C = 0 \Rightarrow U_{CE} = U_{02} = 10\,\text{V} \\
+\text{Punkt 2:} \quad & U_{CE} = 0 \,\, (\text{da Kurzschluss}) \Rightarrow I_C = \frac{10\,\text{V}}{100\,\Omega} = 100\,\text{mA}
+\end{align*}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+ & Wert 1 & Wert 2 & Wert 3 & Wert 4 & Wert 5 \\ \hline
+$I_{C}$ (mA) & 0 & 18.5 & 36 & 51 & 71 \\ \hline
+$I_{B}$ (µA) & 0 & 100 & 200 & 300 & 400 \\ \hline
+$\beta = \frac{I_C}{I_B}$ & 0 & 185 & 180 & 170 & 177.5 \\ \hline
+$U_{CE}$ (V) & 10 & 8.2 & 6.5 & 4.8 & 3.1
+\end{tabular}
+\caption{Arbeitspunkte des Transistors in Schaltanwendung}
+\label{tab:arbeitspunkte}
+\end{table}
+
 
 
 \section{Formelzeichen}
