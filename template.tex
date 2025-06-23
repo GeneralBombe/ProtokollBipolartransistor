@@ -259,6 +259,29 @@ Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlini
 \paragraph{e) Zeichnen Sie in das Ausgangskennlinienfeld die Übersteuerungsgrenze ($U_{CB} = 0\,\mathrm{V}$) ein.}
 
 Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. Sie kann als Gerade im Kennlinienfeld eingezeichnet werden, typischerweise parallel zur $U_{CE}$-Achse bei entsprechendem Wert.
+\documentclass{article}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[margin=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{table}[h!]
+\centering
+\caption{Messwerte für $I_B$, $I_C$ und berechnetes $\beta$}
+\begin{tabular}{c|cccc}
+\toprule
+\textbf{mit $I_B$ [\si{\micro\ampere}]} & 0 & 100 & 200 & 300 & 400 \\
+\midrule
+$I_C$ [\si{\milli\ampere}] & 0 & 18.50 & 35.00 & 53.00 & 70.00 \\
+\midrule
+$\beta = \frac{I_C}{I_B}$ & -- & 185 & 175 & 176.667 & 175 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
+
 
 % C.1.2.
 \subsubsection{Eingangskennlinie}
