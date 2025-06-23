@@ -238,8 +238,9 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 \paragraph{a) Die einzelnen Kennlinien im Kennlinienfeld sind rechts schräg abgeschnitten. Verbinden Sie die Enden der Kennlinien mit einer Geraden und berechnen Sie aus deren Steigung einen Widerstandswert. Welcher Widerstand wird hier sichtbar?}
 Der hier sichtbare Widerstand ist durch die Wiederstände in Reihe mit dem Kollektor zurückzuführen. Die kürzeren Kennlinien bei höheren Basisströmen, liegt an dem geringeren Spannungsabfall $U_{CE}$, welche jetzt an $R_C + R_{gen}$ abfällt. 
 \[
-R_{ges} = R_{gen} + R_{Leitung} = \frac{\Delta U_{CE}}{\Delta I_C} = \frac{\SI{0}{\volt}}{\SI{0}{\ampere}} = \SI{0}{\ohm}
+R_{\text{ges}} = R_{\text{gen}} + R_{\text{Leitung}} = \frac{\Delta U_{CE}}{\Delta I_C} = \frac{4\,\mathrm{V}}{65\,\mathrm{mA}} \approx 61.54\,\Omega
 \]
+egal
 
 wobei $\Delta U_{CE}$ die Spannungsänderung und $\Delta I_C$ die Stromänderung im betrachteten Bereich ist.
 
@@ -247,18 +248,30 @@ wobei $\Delta U_{CE}$ die Spannungsänderung und $\Delta I_C$ die Stromänderung
 \paragraph{b) Erstellen Sie aus dem Ausgangskennlinienfeld den Verlauf der statischen Stromverstärkung $B$ im aktiven Vorwärtsbetrieb bei $U_{CE} = 5\,\mathrm{V}$.}
 
 Die statische Stromverstärkung $B$ (auch $\beta$ genannt) berechnet sich zu $B = \frac{I_C}{I_B}$. Für jeden Messpunkt bei $U_{CE} = 5\,\mathrm{V}$ wird $I_C$ durch den zugehörigen $I_B$ geteilt und der Verlauf von $B$ über $I_B$ bzw. $I_C$ aufgetragen.
-
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c|c}
+$I_{C}$ & 0mA   & 18.5mA   & 36mA    & 51mA    & 71mA    \\ \hline
+$I_{B}$ & 0µA & 100µA & 200µA & 300µA & 400µA \\ \hline
+$\beta_{IC/IB}$ & 0   & 185   & 180    & 170    & 177.5   
+\end{tabular}
+\caption{Stromverstärkung }
+\label{tab:my-table}
+\end{table}
 \paragraph{c) Vergleichen Sie die ermittelte Stromverstärkung mit dem Wert aus dem Datenblatt.}
 
-Die gemessene Stromverstärkung $B$ sollte im Bereich des im Datenblatt angegebenen Wertes (hier $100 \sim 250$) liegen. Abweichungen können durch Messfehler oder Bauteiltoleranzen entstehen.
+Die gemessene Stromverstärkung $B$ liegt im Bereich des im Datenblatt angegebenen Wertes (hier $100 \sim 250$). Abweichungen sind vermutlich durch Messfehler oder Bauteiltoleranzen entstanden.
 
 \paragraph{d) Verlängern Sie die erste Kennlinie, die über dem Kollektorstrom $I_C$ von $100\,\mathrm{mA}$ liegt, nach rechts bis $U_{CE} = 10\,\mathrm{V}$. Bestimmen Sie damit näherungsweise die Early-Spannung $U_A$ des Transistors.}
 
 Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlinie mit der $U_{CE}$-Achse. Dazu wird die Gerade durch die Kennlinie extrapoliert und der Schnittpunkt mit $I_C = 0$ bestimmt.
-
+\[
+U_A = I_0 \cdot \frac{\Delta U}{\Delta I} + U_{BE}= \frac{105\,\mathrm{mA} \cdot 9\,\mathrm{V}}{5\,\mathrm{mA}} + 720\,\mathrm{mV}= 189{,}72\,\mathrm{V}
+\]
 \paragraph{e) Zeichnen Sie in das Ausgangskennlinienfeld die Übersteuerungsgrenze ($U_{CB} = 0\,\mathrm{V}$) ein.}
 
 Die Übersteuerungsgrenze ist die Linie, bei der $U_{CB} = 0\,\mathrm{V}$ gilt. Sie kann als Gerade im Kennlinienfeld eingezeichnet werden, typischerweise parallel zur $U_{CE}$-Achse bei entsprechendem Wert.
+
 
 % C.1.2.
 \subsubsection{Eingangskennlinie}
