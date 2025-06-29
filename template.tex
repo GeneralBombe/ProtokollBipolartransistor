@@ -311,17 +311,20 @@ r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A
 
 \subsubsection{Temperaturverhalten}
 \paragraph{a) Schätzen Sie aus den Messungen aus B.1.3 für $U_{CE} = \SI{8}{\volt}$ und $f = \SI{0.1}{\hertz}$ die Erwärmung im Vergleich zu $U_{CE} = \SI{2}{\volt}$ sowie den maximalen Temperaturunterschied zwischen Kalt- und Warmkennlinie ab.}
+Aufgrund der Hysteresekurve bei $U_{CE} = \SI{8}{\volt}$ im Vergleich zu $U_{CE} = \SI{2}{\volt}$ lässt sich eine deutlich höhere Temperatur bei höherer Spannung vermuten. 
+Bei $U_{CE} = \SI{8}{\volt}$ lässt sich zwischen $f = \SI{0.1}{\hertz}$ und $f = \SI{1}{\kilo\hertz}$ einen Unterschied in der Hysteresekurve erkennen. Diese ist bei der niedrigeren Frequenz viel Stärker ausgeprägt.  
 
-Das Temperaturverhalten des Transistor lässt sich mithilfe des Datenblatt bestimmen. 
-\[
-\Delta T = P \cdot R_{th,C} \hspace{1cm} P_{Transistor} = U_{CE} \cdot I_{B} \cdot \beta \hspace{1cm} R_{th,C} = \SI{10}{\degreeCelsius\per\watt} \hspace{1cm} \beta \approx 200
-\]
-\[
-P_{\SI{8}{\volt}} = \SI{8}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{1.6}{\watt} \hspace{1cm} P_{\SI{2}{\volt}} = \SI{2}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{0.8}{\watt}
-\]
-\[
-\Delta T_{\SI{8}{\volt}} = \SI{1.6}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{16}{\kelvin} \hspace{1cm} \Delta T_{\SI{8}{\volt}} = \SI{0.8}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{8}{\kelvin}
-\]
+%
+%Das Temperaturverhalten des Transistor lässt sich mithilfe des Datenblatt bestimmen. 
+%\[
+%\Delta T = P \cdot R_{th,C} \hspace{1cm} P_{Transistor} = U_{CE} \cdot I_{B} \cdot \beta \hspace{1cm} R_{th,C} = \SI{10}{\degreeCelsius\per\watt} \hspace{1cm} \beta \approx 200
+%\]
+%\[
+%P_{\SI{8}{\volt}} = \SI{8}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{1.6}{\watt} \hspace{1cm} P_{\SI{2}{\volt}} = \SI{2}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{0.8}{\watt}
+%\]
+%\[
+%\Delta T_{\SI{8}{\volt}} = \SI{1.6}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{16}{\kelvin} \hspace{1cm} \Delta T_{\SI{8}{\volt}} = \SI{0.8}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{8}{\kelvin}
+%]
 
 
 \subsubsection{Übertragunskennlinie}
