@@ -171,10 +171,17 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 	\includegraphics[width=0.8\textwidth]{Figures/TemperaturHysterese8V0.1hznah.png}
 	\caption{Hysterese des BD137-16 bei $U_{CE} = 8\,\mathrm{V}$ und $f = 0{,}1\,\mathrm{Hz}$.}
 	\label{fig:8VTemperaturHysterese0.1hznah}
-\end{figure}\begin{figure}[H]
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/temp2v1khz.png}
+	\caption{Eingangskennlinie bei $\SI{2}{\volt}$ und $\SI{1}{\kilo\hertz}$.}
+	\label{fig:2V1eingang}
+\end{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/8V1khz0.1hzzusammentemp.png}
-	\caption{Temperaturverhalten des BD137-16 bei $U_{CE} = 8\,\mathrm{V}$ und $f = 0{,}1\,\mathrm{Hz}$.}
+	\caption{Temperaturverhalten bei $U_{CE} = \SI{8}{\volt}$ und $f = 0{,}1\,\mathrm{Hz}$ sowie $f = \SI{1}{\kilo\hertz}$.}
 	\label{fig:8V1khz0.1hzzusammentemp}
 \end{figure}
 
@@ -314,7 +321,21 @@ r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A
 \paragraph{a) Schätzen Sie aus den Messungen aus B.1.3 für $U_{CE} = \SI{8}{\volt}$ und $f = \SI{0.1}{\hertz}$ die Erwärmung im Vergleich zu $U_{CE} = \SI{2}{\volt}$ sowie den maximalen Temperaturunterschied zwischen Kalt- und Warmkennlinie ab.}
 Aufgrund der Hysteresekurve bei $U_{CE} = \SI{8}{\volt}$ im Vergleich zu $U_{CE} = \SI{2}{\volt}$ lässt sich eine deutlich höhere Temperatur bei höherer Spannung vermuten. 
 Bei $U_{CE} = \SI{8}{\volt}$ lässt sich zwischen $f = \SI{0.1}{\hertz}$ und $f = \SI{1}{\kilo\hertz}$ einen Unterschied in der Hysteresekurve erkennen. Diese ist bei der niedrigeren Frequenz viel Stärker ausgeprägt.  
+Die erhöhte Temperatur hat tendenziell ein Verschieben der Eingangskennlinie nach links zur Folge, etwa $\frac{\SI{2}{\milli\volt}}{\SI{}{\kelvin}}$. 
+Mit Abbildung \ref{fig:2V1eingang} und Abbildung \ref{fig:8V1khz0.1hzzusammentemp} lässt sich $\Delta U_{BE}$ zu $\SI{710}{\milli\volt} - \SI{660}{\milli\volt} = \SI{60}{\milli\volt}$ bestimmen.
+\[
+\Delta T = \frac{\Delta U}{\frac{\SI{2}{\milli\volt}}{\SI{}{\kelvin}}} = \SI{30}{\kelvin}
+\]
+\paragraph{b) Schätzen Sie aus der zweiten Messung die maximale Chiptemperatur sowie die Abkühlrate bei dieser
+Temperatur in $\SI{}{\kelvin\per\second}$ ab.}
 
+Der in a) angenommene Temperaturunterschied muss zur Raumtemperatur addiert werden, um die Chiptemperatur zu bestimmen: $\Delta T + \SI{23}{\degreeCelsius} = \SI{53}{\degreeCelsius}$.
+Die Abkühlrate kann mit hilfe der Kennlinie in Abbildung \ref{fig:8VTemperaturHysterese0.1hznah} bestimmt werden.
+Da die Frequenz bei hoher Hysterese $\SI{0.1}{\hertz}$ beträgt, bedeutet dies, dass die Abkühldauer $\SI{5}{\second}$ beträgt. 
+\[
+\Delta U_{BE,H} = \SI{12.5}{\milli\volt} \rightarrow \Delta T = \frac{\Delta U_{BE,H}}{\frac{\SI{2}{\milli\volt}}{\SI{}{\kelvin}}} = \SI{6.25}{\kelvin}
+\rightarrow \frac{\Delta T}{\SI{5}{\second}} = \SI{1.25}{\kelvin\per\second}
+\]
 %
 %Das Temperaturverhalten des Transistor lässt sich mithilfe des Datenblatt bestimmen. 
 %\[
