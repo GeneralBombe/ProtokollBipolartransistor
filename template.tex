@@ -261,12 +261,22 @@ B = f_{go} - f_{gu} \approx \SI{728}{\kilo\hertz}
 	\label{fig:MessschaltungSchaltanwendung}
 \end{figure}
 Da bei der Versuchsdurchführung aus ungeklärten Gründen die Messung mit dem Oszilloskop nicht erfolgreich war, wird dieser Versuch mit LTSpice Simuliert. Dafür wird ein 2N3055 verwendet, welcher ähnliche Eigenschaften wie der Bipolartransistor im Labor vorweist.  
+Der Basisstrom wird allerdings über eine Ideale Stromquelle festgelegt, jedoch mit gleichen Zeitlichen Parametern wie in der Versuchsanleitung.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Figures/LTSpiceSchaltung.png}
 	\caption{Simulationsschaltung in LTSpice.}
 	\label{fig:LTSpiceSchaltung}
 \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/LTSpiceTime300u.png}
+	\caption{Zeitlicher Verlauf von $I_B$ (oben), $I_C$ (mitte), $U_{CE}$ (unten)}
+	\label{fig:300uVerlauf3}
+\end{figure}
+
+
 \subsubsection{Ausschaltzeiten}
 
 \subsubsection{Einschaltzeiten}
