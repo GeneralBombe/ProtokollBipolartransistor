@@ -128,13 +128,13 @@ Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ i
 % B.1.1.
 \subsubsection{Ausgangskennlinienfeld}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Figures/MessschaltungAusgangskennlinienfeld.png}
 	\caption{Messschaltung zur Aufnahme des Ausgangskennlinienfeldes des BD137-16.}
 	\label{fig:MessschaltungAusgangskennlinienfeld}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/Ausgangskennlinienfeld.png}
 	\caption{Gemessenes Ausgangskennlinienfeld.}
@@ -145,7 +145,7 @@ Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{
 
 % B.1.2.
 \subsubsection{Eingangskennlinie}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/MessschaltungEingangskennlinie.png}
 	\caption{Messschaltung zur Aufnahme der Eingangskennlinie des BD137-16.}
@@ -171,15 +171,35 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 	\includegraphics[width=0.8\textwidth]{Figures/TemperaturHysterese8V0.1hznah.png}
 	\caption{Hysterese des BD137-16 bei $U_{CE} = 8\,\mathrm{V}$ und $f = 0{,}1\,\mathrm{Hz}$.}
 	\label{fig:8VTemperaturHysterese0.1hznah}
-\end{figure}\begin{figure}[H]
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/temp2v1khz.png}
+	\caption{Eingangskennlinie bei $\SI{2}{\volt}$ und $\SI{1}{\kilo\hertz}$.}
+	\label{fig:2V1eingang}
+\end{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/8V1khz0.1hzzusammentemp.png}
-	\caption{Temperaturverhalten des BD137-16 bei $U_{CE} = 8\,\mathrm{V}$ und $f = 0{,}1\,\mathrm{Hz}$.}
+	\caption{Temperaturverhalten bei $U_{CE} = \SI{8}{\volt}$ und $f = 0{,}1\,\mathrm{Hz}$ sowie $f = \SI{1}{\kilo\hertz}$.}
 	\label{fig:8V1khz0.1hzzusammentemp}
 \end{figure}
 
 % B.1.4.
 \subsubsection{Übertragungskennlinie}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/MessschaltungÜbertragungskennlinie.png}
+	\caption{Messschaltung zur Aufnahme der Übertragungskennlinie.}
+	\label{fig:MessschaltungÜbertragungskennlinie}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/Übertragungskennlinie.png}
+	\caption{Messschaltung zur Aufnahme der Übertragungskennlinie.}
+	\label{fig:Übertragungskennlinie}
+\end{figure}
+
 % B.2.
 \subsection{Betrieb als Verstärker}
 % B.2.1.
@@ -205,19 +225,30 @@ $U_{Ausgang}$ & 1   & 1   & 1    & 1    & 1
 \label{tab:my-table}
 \end{table}
 \subsubsection{Grundlagen}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/scope_26.png}
+	\caption{Unten Abgeflachtes Ausgangssignal.}
+	\label{fig:supplyrailsmid}
+\end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/supplyrailskrass.png}
 	\caption{Abgeschnittenes Ausgangssignal.}
 	\label{fig:supplyrailskrass}
 \end{figure}
+
+%scope_26.png
 % B.2.3.
 \subsubsection{Bandbreite}
-Die untere Grenzfrequenz $f_{gu}$ und die obere Grenzfrequenz $f_{go}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
-\[
-B = f_{go} - f_{gu}
-\]
+Die untere Grenzfrequenz $f_{gu} = \SI{36.6}{\hertz}$ und die obere Grenzfrequenz $f_{go} = \SI{728}{\kilo\hertz}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
 Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}} \hat{=}\SI{-3}{\decibel}$ ihres Maximalwertes im unteren Frequenzbereich abfällt, und $f_{go}$ entsprechend im oberen Frequenzbereich.
+Die Spannungsverstärkung leigt ca. bei $\SI{41.1}{\decibel}$. Die Grenzfrequenzen $f_{go}$ und $f_{go}$ liegen dann bei etwa $\SI{41.1}{\decibel} - \SI{3}{\decibel} = \SI{38.1}{\decibel}$.
+
+\[
+B = f_{go} - f_{gu} \approx \SI{728}{\kilo\hertz}
+\]
 
 % B.3.
 \subsection{Schaltanwendung}
@@ -229,6 +260,16 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 	\caption{Messschaltung für Charakterisierung des Transistor als Schalter.}
 	\label{fig:MessschaltungSchaltanwendung}
 \end{figure}
+Da bei der Versuchsdurchführung aus ungeklärten Gründen die Messung mit dem Oszilloskop nicht erfolgreich war, wird dieser Versuch mit LTSpice Simuliert. Dafür wird ein 2N3055 verwendet, welcher ähnliche Eigenschaften wie der Bipolartransistor im Labor vorweist.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{Figures/LTSpiceSchaltung.png}
+	\caption{Simulationsschaltung in LTSpice.}
+	\label{fig:LTSpiceSchaltung}
+\end{figure}
+\subsubsection{Ausschaltzeiten}
+
+\subsubsection{Einschaltzeiten}
 
 % C.
 \section{Auswertung}
@@ -247,17 +288,16 @@ Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}
 	\label{fig:arbeitspunkte schaltkonfiguration}
 \end{figure}
 
-\paragraph{a) Die einzelnen Kennlinien im Kennlinienfeld sind rechts schräg abgeschnitten. Verbinden Sie die Enden der Kennlinien mit einer Geraden und berechnen Sie aus deren Steigung einen Widerstandswert. Welcher Widerstand wird hier sichtbar?}
+\paragraph{a)}
 Der hier sichtbare Widerstand ist durch die Wiederstände in Reihe mit dem Kollektor zurückzuführen. Die kürzeren Kennlinien bei höheren Basisströmen, liegt an dem geringeren Spannungsabfall $U_{CE}$, welche jetzt an $R_C + R_{gen}$ abfällt. 
 \[
 R_{\text{ges}} = R_{\text{gen}} + R_{\text{Leitung}} = \frac{\Delta U_{CE}}{\Delta I_C} = \frac{4\,\mathrm{V}}{65\,\mathrm{mA}} \approx 61.54\,\Omega
 \]
-egal
 
 wobei $\Delta U_{CE}$ die Spannungsänderung und $\Delta I_C$ die Stromänderung im betrachteten Bereich ist.
 
 
-\paragraph{b) Erstellen Sie aus dem Ausgangskennlinienfeld den Verlauf der statischen Stromverstärkung $B$ im aktiven Vorwärtsbetrieb bei $U_{CE} = 5\,\mathrm{V}$.}
+\paragraph{b)}
 
 Die statische Stromverstärkung $B$ (auch $\beta$ genannt) berechnet sich zu $B = \frac{I_C}{I_B}$. Für jeden Messpunkt bei $U_{CE} = 5\,\mathrm{V}$ wird $I_C$ durch den zugehörigen $I_B$ geteilt und der Verlauf von $B$ über $I_B$ bzw. $I_C$ aufgetragen.
 \begin{table}[H]
@@ -270,17 +310,17 @@ $\beta_{IC/IB}$ & 0   & 185   & 180    & 170    & 177.5
 \caption{Stromverstärkung }
 \label{tab:my-table}
 \end{table}
-\paragraph{c) Vergleichen Sie die ermittelte Stromverstärkung mit dem Wert aus dem Datenblatt.}
+\paragraph{c)}
 
 Die gemessene Stromverstärkung $B$ liegt im Bereich des im Datenblatt angegebenen Wertes (hier $100 \sim 250$). Abweichungen sind vermutlich durch Messfehler oder Bauteiltoleranzen entstanden.
 
-\paragraph{d) Verlängern Sie die erste Kennlinie, die über dem Kollektorstrom $I_C$ von $100\,\mathrm{mA}$ liegt, nach rechts bis $U_{CE} = 10\,\mathrm{V}$. Bestimmen Sie damit näherungsweise die Early-Spannung $U_A$ des Transistors.}
+\paragraph{d)}
 
 Die Early-Spannung $U_A$ ergibt sich als Schnittpunkt der verlängerten Kennlinie mit der $U_{CE}$-Achse. Dazu wird die Gerade durch die Kennlinie extrapoliert und der Schnittpunkt mit $I_C = 0$ bestimmt.
 \[
 U_A = I_0 \cdot \frac{\Delta U}{\Delta I} + U_{BE}= \frac{105\,\mathrm{mA} \cdot 9\,\mathrm{V}}{5\,\mathrm{mA}} + 720\,\mathrm{mV}= 189{,}72\,\mathrm{V}
 \]
-\paragraph{e) Zeichnen Sie in das Ausgangskennlinienfeld die Übersteuerungsgrenze ($U_{CB} = 0\,\mathrm{V}$) ein.}
+\paragraph{e)}
 
 Die Übersteuerungsgrenze ist die Linie im Ausgangskennlinienfeld, für welche $U_{CB} = \SI{0}{V}$, also $U_{CE} = U_{BE}$ gilt. Links dieser Linie Grenze liegt der Sättigungsbereich.
 
@@ -311,18 +351,35 @@ r_{BE} = \frac{\Delta U_{BE}}{\Delta I_B} = \frac{50\,\text{mV}}{750\,\mu\text{A
 \]
 
 \subsubsection{Temperaturverhalten}
-\paragraph{a) Schätzen Sie aus den Messungen aus B.1.3 für $U_{CE} = \SI{8}{\volt}$ und $f = \SI{0.1}{\hertz}$ die Erwärmung im Vergleich zu $U_{CE} = \SI{2}{\volt}$ sowie den maximalen Temperaturunterschied zwischen Kalt- und Warmkennlinie ab.}
+\paragraph{a)}
+Aufgrund der Hysteresekurve bei $U_{CE} = \SI{8}{\volt}$ im Vergleich zu $U_{CE} = \SI{2}{\volt}$ lässt sich eine deutlich höhere Temperatur bei höherer Spannung vermuten. 
+Bei $U_{CE} = \SI{8}{\volt}$ lässt sich zwischen $f = \SI{0.1}{\hertz}$ und $f = \SI{1}{\kilo\hertz}$ einen Unterschied in der Hysteresekurve erkennen. Diese ist bei der niedrigeren Frequenz viel Stärker ausgeprägt.  
+Die erhöhte Temperatur hat tendenziell ein Verschieben der Eingangskennlinie nach links zur Folge, etwa $\frac{\SI{2}{\milli\volt}}{\SI{}{\kelvin}}$. 
+Mit Abbildung \ref{fig:2V1eingang} und Abbildung \ref{fig:8V1khz0.1hzzusammentemp} lässt sich $\Delta U_{BE}$ zu $\SI{710}{\milli\volt} - \SI{660}{\milli\volt} = \SI{60}{\milli\volt}$ bestimmen.
+\[
+\Delta T = \frac{\Delta U}{\frac{\SI{2}{\milli\volt}}{\SI{}{\kelvin}}} = \SI{30}{\kelvin}
+\]
+\paragraph{b)}
 
-Das Temperaturverhalten des Transistor lässt sich mithilfe des Datenblatt bestimmen. 
+Der in a) angenommene Temperaturunterschied muss zur Raumtemperatur addiert werden, um die Chiptemperatur zu bestimmen: $\Delta T + \SI{23}{\degreeCelsius} = \SI{53}{\degreeCelsius}$.\\
+Die Abkühlrate kann mit hilfe der Kennlinie in Abbildung \ref{fig:8VTemperaturHysterese0.1hznah} bestimmt werden.
+Da die Frequenz bei hoher Hysterese $\SI{0.1}{\hertz}$ beträgt, führt dies auf eine Abkühldauer von $\SI{5}{\second}$.\\
+
 \[
-\Delta T = P \cdot R_{th,C} \hspace{1cm} P_{Transistor} = U_{CE} \cdot I_{B} \cdot \beta \hspace{1cm} R_{th,C} = \SI{10}{\degreeCelsius\per\watt} \hspace{1cm} \beta \approx 200
+\Delta U_{BE,H} = \SI{12.5}{\milli\volt} \rightarrow \Delta T = \frac{\Delta U_{BE,H}}{\frac{\SI{2}{\milli\volt}}{\SI{}{\kelvin}}} = \SI{6.25}{\kelvin}
+\rightarrow \frac{\Delta T}{\SI{5}{\second}} = \SI{1.25}{\kelvin\per\second}
 \]
-\[
-P_{\SI{8}{\volt}} = \SI{8}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{1.6}{\watt} \hspace{1cm} P_{\SI{2}{\volt}} = \SI{2}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{0.8}{\watt}
-\]
-\[
-\Delta T_{\SI{8}{\volt}} = \SI{1.6}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{16}{\kelvin} \hspace{1cm} \Delta T_{\SI{8}{\volt}} = \SI{0.8}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{8}{\kelvin}
-\]
+%
+%Das Temperaturverhalten des Transistor lässt sich mithilfe des Datenblatt bestimmen. 
+%\[
+%\Delta T = P \cdot R_{th,C} \hspace{1cm} P_{Transistor} = U_{CE} \cdot I_{B} \cdot \beta \hspace{1cm} R_{th,C} = \SI{10}{\degreeCelsius\per\watt} \hspace{1cm} \beta \approx 200
+%\]
+%\[
+%P_{\SI{8}{\volt}} = \SI{8}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{1.6}{\watt} \hspace{1cm} P_{\SI{2}{\volt}} = \SI{2}{\volt} \cdot \SI{1}{\milli\ampere} \cdot 200 = \SI{0.8}{\watt}
+%\]
+%\[
+%\Delta T_{\SI{8}{\volt}} = \SI{1.6}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{16}{\kelvin} \hspace{1cm} \Delta T_{\SI{8}{\volt}} = \SI{0.8}{\watt} \cdot \SI{10}{\degreeCelsius\per\watt} = \SI{8}{\kelvin}
+%]
 
 
 \subsubsection{Übertragunskennlinie}
@@ -338,7 +395,7 @@ g_m \approx \frac{\Delta I_C}{\Delta U_{BE}} = \frac{30\,\mathrm{mA}}{52\,\mathr
 \[
 g_{\text{m, theoretisch}} = \frac{I_{\text{C}}}{U_{\text{T}}} = \frac{20\,\text{mA}}{25.8\,\text{mV}} = 0.775194\,\text{S}
 \]
-\subsubsection{Verstärker}
+\subsection{Verstärker}
 
 
 \paragraph{a) Zeichnen Sie die Arbeitsgerade des Verstärkers durch den Arbeitspunkt $I_C = \SI{20}{\milli\ampere}$ in das Ausgangskennlinienfeld ein. Markieren Sie die Schwingungsbereiche des Kollektorstroms auf der $I_C$-Achse sowie der Ausgangsspannung auf der $U_{CE}$-Achse. Verwenden Sie dazu den in B.2.2 gemessenen Spitze-Tal-Wert der Ausgangsspannung im verzerrungsfreien Betrieb.}
@@ -402,8 +459,15 @@ $\hat{u}_{pp-Ausgang}$ & $\SI{749}{\milli\volt}$ & $\SI{1.75}{\volt}$ & $\SI{3.2
 
 
 \paragraph{d) Berechnen Sie mit der Steilheit aus C.1.4 die erwartbare Spannungsverstärkung für den Arbeitspunkt
-IC = 20 mA mit R C = 1 kW und vergleichen Sie diese mit der in B.2.2 erreichten Spannungsverstärkung bei
-IC = 20 mA.}
+$I_C = \SI{20}{\milli\ampere}$ mA mit $R_C = \SI{1}{\kilo\ohm}$ und vergleichen Sie diese mit der in B.2.2 erreichten Spannungsverstärkung.}
+\[
+r_{CE} \approx \frac{U_A}{|I_C|} = \frac{\SI{189.72}{\volt}}{\SI{20}{\milli\ampere}} = \SI{9486}{\ohm} \\ 
+\]
+\[
+v_u = g_m \cdot (r_{CE} \parallel R_C) \approx \SI{521.9}{}
+\]
+Die berechnete Spannungsverstärkung für $I_C = \SI{20}{\milli\ampere}$ entspricht einer guten Annäherung der gemessenen Spannungsverstärkung in diesem Arbeitspunkt. Unter der Berücksichtigung der Messungenauigkeiten, Ablesefehler zur Berechnung der Earlyspannung liegt das Ergebnis im Rahmen. Zudem wurde eine Näherung für $R_{CE}$ verwendet, was weitere Ungenauigkeiten zur Folge hat. 
+
 
 \subsection{Schalter}
 \subsubsection{Arbeitspunkte}
