@@ -1,0 +1,13 @@
+* C:\Users\gries\OneDrive\HM\2. Semester\EBAU\ProtokollBipolartransistor\Simulation3\SimulationSchaltzeiten.asc
+Q1 N002 N004 0 0 2N3055
+V§Uo N001 0 10
+RL N001 N002 100
+RB N004 N003 1k
+I1 0 N003 PULSE(0 {iparam} 0 1n 1n 100u 200u)
+.model NPN NPN
+.model PNP PNP
+.lib C:\Users\gries\AppData\Local\LTspice\lib\cmp\standard.bjt
+.tran 0 0.5m
+.step param iparam list 300u 400u 500u 600u
+.backanno
+.end
