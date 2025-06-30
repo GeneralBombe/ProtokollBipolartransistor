@@ -225,19 +225,30 @@ $U_{Ausgang}$ & 1   & 1   & 1    & 1    & 1
 \label{tab:my-table}
 \end{table}
 \subsubsection{Grundlagen}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Figures/scope_26.png}
+	\caption{Unten Abgeflachtes Ausgangssignal.}
+	\label{fig:supplyrailsmid}
+\end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/supplyrailskrass.png}
 	\caption{Abgeschnittenes Ausgangssignal.}
 	\label{fig:supplyrailskrass}
 \end{figure}
+
+%scope_26.png
 % B.2.3.
 \subsubsection{Bandbreite}
-Die untere Grenzfrequenz $f_{gu}$ und die obere Grenzfrequenz $f_{go}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
-\[
-B = f_{go} - f_{gu}
-\]
+Die untere Grenzfrequenz $f_{gu} = \SI{36.6}{\hertz}$ und die obere Grenzfrequenz $f_{go} = \SI{728}{\kilo\hertz}$ bestimmen die Bandbreite des Verstärkers. Die Bandbreite $B$ ergibt sich zu:
 Dabei ist $f_{gu}$ die Frequenz, bei der die Verstärkung auf $\frac{1}{\sqrt{2}} \hat{=}\SI{-3}{\decibel}$ ihres Maximalwertes im unteren Frequenzbereich abfällt, und $f_{go}$ entsprechend im oberen Frequenzbereich.
+Die Spannungsverstärkung leigt ca. bei $\SI{41.1}{\decibel}$. Die Grenzfrequenzen $f_{go}$ und $f_{go}$ liegen dann bei etwa $\SI{41.1}{\decibel} - \SI{3}{\decibel} = \SI{38.1}{\decibel}$.
+
+\[
+B = f_{go} - f_{gu} \approx \SI{728}{\kilo\hertz}
+\]
 
 % B.3.
 \subsection{Schaltanwendung}
