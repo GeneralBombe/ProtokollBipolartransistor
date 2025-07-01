@@ -63,7 +63,7 @@ per-mode=symbol-or-fraction,
 %----------------------------------------------------------------------------------------
 \setlength{\parindent}{0pt}
 
-\title{Protokoll Praktikum EBau Bipolartransistor} % Report title
+\title{Protokoll zum Praktikumsversuch Bipolartransistor in Elektronische Bauelemente} % Report title
 
 \author{Johann \textsc{Becker} \and Valentin \textsc{Eder} \and Marc \textsc{Ostner}}
 \date{\today} % Date of the report
@@ -115,7 +115,7 @@ Ein gepolter Elektrolytkondensator muss so eingebaut werden, dass die positive S
 
 \paragraph{e) Auf welchen Wert sollte der ausgangsseitige Arbeitspunkt $U_{CE}$ eines Verstärkers in Emitterschaltung sinnvollerweise eingestellt werden? }
 
-Der Arbeitspunkt sollte in der "Safe Operation Area" eingestellt werden, um die Verstärkung möglichst wenig zu Verzerren. Also sollte $U_{CE}$ überhablb des Sättigungsbereichs liegen, aber unter der maximalen ableitbaren Leistung. 
+Der Arbeitspunkt sollte in der ``Safe Operation Area`` eingestellt werden, um die Verstärkung möglichst wenig zu Verzerren. Also sollte $U_{CE}$ überhablb des Sättigungsbereichs liegen, aber unter der maximalen ableitbaren Leistung. 
 Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ im Mittel dieser beiden Spannungen $U_{CE\,\text{Sättigung}}$ und $U_{CE\,\text{PMax}}$ liegen.
 
 
@@ -196,7 +196,7 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{Figures/Übertragungskennlinie.png}
-	\caption{Messschaltung zur Aufnahme der Übertragungskennlinie.}
+	\caption{Übertragungskennlinie mit $\Delta U_{BE}$ und $\Delta I_C$ bei $I_C = \SI{20}{\milli\ampere}$.}
 	\label{fig:Übertragungskennlinie}
 \end{figure}
 
@@ -214,16 +214,6 @@ Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 % B.2.2.
 \subsubsection{Spannungsverstärkung}
 Der Arbeitspunkt für die Spannungsverstärkung wird durch die Schaltung in Abbildung~\ref{fig:MessschaltungVerstärker} dargestellt.
-\begin{table}[H]
-\centering
-\begin{tabular}{c|c|c|c|c|c}
-$I_{C}$      & 2mA & 5mA & 10mA & 15mA & 20mA \\ \hline
-$U_{Eingang}$ & 1   & 1   & 1    & 1    & 1    \\ \hline
-$U_{Ausgang}$ & 1   & 1   & 1    & 1    & 1   
-\end{tabular}
-\caption{Aus und Eingangsamplituden bei Verschiedenen Kollektorströmen- }
-\label{tab:my-table}
-\end{table}
 \subsubsection{Grundlagen}
 
 \begin{figure}[H]
@@ -261,12 +251,23 @@ B = f_{go} - f_{gu} \approx \SI{728}{\kilo\hertz}
 	\label{fig:MessschaltungSchaltanwendung}
 \end{figure}
 Da bei der Versuchsdurchführung aus ungeklärten Gründen die Messung mit dem Oszilloskop nicht erfolgreich war, wird dieser Versuch mit LTSpice Simuliert. Dafür wird ein 2N3055 verwendet, welcher ähnliche Eigenschaften wie der Bipolartransistor im Labor vorweist.  
+Der Basisstrom wird allerdings über eine Ideale Stromquelle festgelegt, jedoch mit gleichen Zeitlichen Parametern wie in der Versuchsanleitung.
+Die Basisströme wurden mit ´´.step´´ alle in einem Diagramm Dargestellt. Dabei ist $I_B = \SI{300}{\micro\ampere}$ grün, $I_B = \SI{400}{\micro\ampere}$ blau, $I_B = \SI{500}{\micro\ampere}$ rot und $I_B = \SI{300}{\micro\ampere}$ türkis.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\textwidth]{Figures/LTSpiceSchaltung.png}
 	\caption{Simulationsschaltung in LTSpice.}
 	\label{fig:LTSpiceSchaltung}
 \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{Figures/LTSpiceTime300u.png}
+	\caption{Zeitlicher Verlauf von $I_B$ (oben), $I_C$ (mitte), $U_{CE}$ (unten)}
+	\label{fig:300uVerlauf3}
+\end{figure}
+
+
 \subsubsection{Ausschaltzeiten}
 
 \subsubsection{Einschaltzeiten}
@@ -389,16 +390,21 @@ Da die Frequenz bei hoher Hysterese $\SI{0.1}{\hertz}$ beträgt, führt dies auf
 	\caption{Übertragungskennlinie.}
 	\label{fig:Übertragungskennlinie}
 \end{figure}
+
+Die Berechnung der realen sowie theoretischen Steilheit ergibt:\\
+
 \[
-g_m \approx \frac{\Delta I_C}{\Delta U_{BE}} = \frac{30\,\mathrm{mA}}{52\,\mathrm{mV}} = 0{,}576923\,\mathrm{S}
+g_m \approx \frac{\Delta I_C}{\Delta U_{BE}} = \frac{\SI{32.5}{\milli\ampere}}{\SI{48}{\milli\volt}} \approx \SI{0.677}{\siemens}
 \]
 \[
-g_{\text{m, theoretisch}} = \frac{I_{\text{C}}}{U_{\text{T}}} = \frac{20\,\text{mA}}{25.8\,\text{mV}} = 0.775194\,\text{S}
+g_{\text{m, theoretisch}} = \frac{I_{\text{C}}}{U_{\text{T}}} = \frac{20\,\text{mA}}{25,8\,\text{mV}} = 0.775194\,\text{S}
 \]
+
+\vspace{2em}
+Die ermittelten Werte stimmen im Rahmen der Messungenauigkeit mit den theoretischen überein.
+
 \subsection{Verstärker}
-
-
-\paragraph{a) Zeichnen Sie die Arbeitsgerade des Verstärkers durch den Arbeitspunkt $I_C = \SI{20}{\milli\ampere}$ in das Ausgangskennlinienfeld ein. Markieren Sie die Schwingungsbereiche des Kollektorstroms auf der $I_C$-Achse sowie der Ausgangsspannung auf der $U_{CE}$-Achse. Verwenden Sie dazu den in B.2.2 gemessenen Spitze-Tal-Wert der Ausgangsspannung im verzerrungsfreien Betrieb.}
+\paragraph{a)}
 
 Die lineare Quellkennlinie beschreibt den Zusammenhang zwischen Kollektorstrom $I_C$ und Kollektor-Emitter-Spannung $U_{CE}$ für einen gegebenen Arbeitswiderstand $R_C$ und eine Versorgungsspannung $U_{o2}$:
 
@@ -418,13 +424,15 @@ Für $U_{CE} = \SI{10}{\volt}$ ergibt sich:
 I_C(10\,\mathrm{V}) = \frac{\SI{20}{\volt}- \SI{10}{\volt}}{\SI{1}{\kilo\ohm}} = \SI{10}{\milli\ampere}
 \]
 
+\vspace{1em}
 Die Arbeitsgerade verläuft also von $(U_{CE}, I_C) = (\SI{0}{\volt}, \SI{20}{\milli\ampere})$ durch $(\SI{10}{\volt}, \SI{10}{\milli\ampere})$.
 
-\paragraph{b) Erklären Sie, warum das Ausgangssignal bei zu großen Eingangsamplituden nicht mehr sinusförmig ist.}
-Bei zu großen Eingangsamplituden verlässt der Transistor den linearen Arbeitsbereich. Das Ausgangssignal wird dann an den Versorgungsspannungen begrenzt, sodass die Signalform verzerrt wird (siehe Abbildung~\ref{fig:supplyrailskrass}). Bereits bei geringeren Amplituden kann es durch die nichtlineare Eingangskennlinie (Abbildung~\ref{fig:Eingangskennlinie}) zu Verzerrungen kommen. Die maximale unverzerrte Ausgangsamplitude hängt daher sowohl von der Versorgungsspannung als auch von der Steilheit der $I_B(U_{BE})$-Kennlinie im Arbeitspunkt ab.  
+\paragraph{b)}
+Bei zu großen Eingangsamplituden verlässt der Transistor den linearen Arbeitsbereich. Das Ausgangssignal wird dann an den Versorgungsspannungen begrenzt, sodass die Signalform verzerrt wird (siehe Abbildung~\ref{fig:supplyrailskrass}).\\
+Bereits bei geringeren Amplituden kann es durch die nichtlineare Eingangskennlinie (Abbildung~\ref{fig:Eingangskennlinie}) zu Verzerrungen kommen. Die maximale unverzerrte Ausgangsamplitude hängt daher sowohl von der Versorgungsspannung als auch von der Steilheit der $I_B(U_{BE})$-Kennlinie im Arbeitspunkt ab.\\ 
 Für Spannungen des Eingangssignal unterhalb dessen Mittelwert ist eine Abflachung des Verstärkten Signal früher zu erkennen, weil der Transistor für diese Spannungen im Sättigungsbereich arbeitet. Deshalb ist der Schnitt unten am verstärkten Signal eher Abgerundet. 
 
-\paragraph{c) Tragen Sie die Spannungsverstärkung über dem Kollektor-Ruhestrom auf.}
+\paragraph{c)}
 Die Spannungsverstärkung $v_u$ berechnet sich als Verhältnis der Ausgangs- zur Eingangsamplitude:
 \[
 v_u = \frac{u_{pp-{Ausgang}}}{u_{pp-{Eingang}}}
@@ -458,15 +466,20 @@ $\hat{u}_{pp-Ausgang}$ & $\SI{749}{\milli\volt}$ & $\SI{1.75}{\volt}$ & $\SI{3.2
 \end{figure}
 
 
-\paragraph{d) Berechnen Sie mit der Steilheit aus C.1.4 die erwartbare Spannungsverstärkung für den Arbeitspunkt
-$I_C = \SI{20}{\milli\ampere}$ mA mit $R_C = \SI{1}{\kilo\ohm}$ und vergleichen Sie diese mit der in B.2.2 erreichten Spannungsverstärkung.}
+\paragraph{d)}
+
+Die Berechnung der Spannungsverstärkung ergibt:\\
+
 \[
 r_{CE} \approx \frac{U_A}{|I_C|} = \frac{\SI{189.72}{\volt}}{\SI{20}{\milli\ampere}} = \SI{9486}{\ohm} \\ 
 \]
 \[
-v_u = g_m \cdot (r_{CE} \parallel R_C) \approx \SI{521.9}{}
+v_u = g_m \cdot (r_{CE} \parallel R_C) \approx \SI{612.5}{}
 \]
-Die berechnete Spannungsverstärkung für $I_C = \SI{20}{\milli\ampere}$ entspricht einer guten Annäherung der gemessenen Spannungsverstärkung in diesem Arbeitspunkt. Unter der Berücksichtigung der Messungenauigkeiten, Ablesefehler zur Berechnung der Earlyspannung liegt das Ergebnis im Rahmen. Zudem wurde eine Näherung für $R_{CE}$ verwendet, was weitere Ungenauigkeiten zur Folge hat. 
+
+\vspace{1em}
+Die berechneten Werte für \( I_C = \SI{20}{\milli\ampere} \) stimmt gut mit der gemessenen Spannungsverstärkung in diesem Arbeitspunkt überein. Unter Berücksichtigung von Messungenauigkeiten, Ablesefehlern bei der Bestimmung der Early-Spannung sowie der verwendeten Näherung für \( R_{CE} \) liegt das Ergebnis im erwarteten Rahmen. Diese Faktoren führen zu gewissen Ungenauigkeiten, beeinflussen das Gesamtergebnis jedoch nur geringfügig.
+
 
 
 \subsection{Schalter}
@@ -533,6 +546,7 @@ Für ein steigendes $I_B$ wird der Transistor somit immer mehr zu einem idealen 
 
 \subsubsection{Schaltzeiten}
 
+
 \paragraph{a)}
 
 
@@ -540,33 +554,6 @@ Für ein steigendes $I_B$ wird der Transistor somit immer mehr zu einem idealen 
 \paragraph{b)}
 
 
-\section{Formelzeichen}
-\begin{table}[H]
-\centering
-\begin{tabular}{ll}
-\toprule
-\textbf{Symbol} & \textbf{Bedeutung} \\
-\midrule
-$C_s$    & Sperrschichtkapazität \\
-$I_c$    & Fluß- oder Vorwärtestrom \\
-$I_a$    & Sperrstrom- oder Rückwärtestrom \\
-$I_s$    & Sperrsättigungsstrom \\
-$M$      & Stufenfaktor (grading coefficient) \\
-$m$      & Emissionskoeffizient \\
-$N_a$    & Akzeptordichte \\
-$N_0$    & Donatordichte \\
-$R_a$    & Bahnwiderstand \\
-$t_0$    & Injektionszeit \\
-$t_1$    & Anstiegszeit (Risetime) \\
-$t_1$    & Sperrverzögerungszeit (Reverse Recovery Time) \\
-$t_s$    & Speicherzeit \\
-$U_0$    & Diffusionsspannung \\
-$U_c$    & Fluß- oder Vorwärtsspannung \\
-$U_s$    & Sperr- oder Rückwärtsspannung \\
-$U_{s\_5mk}$ & Durchbruchspannung an der Z-Diode bei $I_2 = 5$mA \\
-\bottomrule
-\end{tabular}
-\end{table}
 
 %\printbibliography % Output the bibliography
 
