@@ -106,7 +106,7 @@ Der ``-16'' Anhang steht für die dynamische Stromverstärkung $\beta_{\RNum{3}}
 Hier nicht ausgeführte Fragen finden sich im Anhang.
 \paragraph{a) Welche Aufgabe hat der Kondensator $C_k$ und wie herum muss ein gepolter Elektrolytkondensator an dieser Stelle eingebaut werden?}
 Der Koppelkondensator $C_k$ trennt den Gleichspannungsanteil vom Signal und lässt nur das Wechselspannungssignal durch.
-Hierdurch kann ein Transistor Arbeitspunkt unabhängig von der Signalquelle $U_{sig}$ eingestellt werden. Als resultat bleibt der Großsignal Arbeitspunkt bestehen, während die Kleinsignaländerungen von $U_{sig}$ weiterhin bestehen bleiben. 
+Hierdurch kann ein Transistor Arbeitspunkt unabhängig von der Signalquelle $U_{sig}$ eingestellt werden. Als Resultat bleibt der Großsignal Arbeitspunkt bestehen, während die Kleinsignaländerungen von $U_{sig}$ weiterhin bestehen bleiben. 
 
 
 
@@ -115,7 +115,7 @@ Ein gepolter Elektrolytkondensator muss so eingebaut werden, dass die positive S
 
 \paragraph{e) Auf welchen Wert sollte der ausgangsseitige Arbeitspunkt $U_{CE}$ eines Verstärkers in Emitterschaltung sinnvollerweise eingestellt werden? }
 
-Der Arbeitspunkt sollte in der ``Safe Operation Area`` eingestellt werden, um die Verstärkung möglichst wenig zu Verzerren. Also sollte $U_{CE}$ überhablb des Sättigungsbereichs liegen, aber unter der maximalen ableitbaren Leistung. 
+Der Arbeitspunkt sollte in der ``Safe Operation Area`` eingestellt werden, um die Verstärkung möglichst wenig zu verzerren. Also sollte $U_{CE}$ überhablb des Sättigungsbereichs liegen, aber unter der maximalen ableitbaren Leistung. 
 Um eine maximale Verstärkungsamplitude zu gewährleisten, sollte $U_{CE\,AP}$ im Mittel dieser beiden Spannungen $U_{CE\,\text{Sättigung}}$ und $U_{CE\,\text{PMax}}$ liegen.
 
 
@@ -160,7 +160,7 @@ Das Ausgangskennlinienfeld wird jeweils in Schritten von $\Delta I_B = \SI{100}{
 
 
 
-Für diese Messung ist wichtig, die Spannungsquelle direkt am Kollektor und Emitter anzulegen, um die Spannung so Konstant wie möglich zu halten.
+Für diese Messung ist wichtig, die Spannungsquelle direkt am Kollektor und Emitter anzulegen, um die Spannung so konstant wie möglich zu halten.
 Um eine Zerstörung des Transistors bei fehlerhaften Versuchsdurchführung zu verhindern, muss die Strombegrenzung der Spannungsquelle auf \SI{250}{\milli\ampere} eingestellt werden. 
 Der Basisstrom wird über den Spannungsabfall an $R_B$ bestimmt.
 
@@ -251,7 +251,7 @@ B = f_{go} - f_{gu} \approx \SI{728}{\kilo\hertz}
 	\label{fig:MessschaltungSchaltanwendung}
 \end{figure}
 Da bei der Versuchsdurchführung aus ungeklärten Gründen die Messung mit dem Oszilloskop nicht erfolgreich war, wird dieser Versuch mit LTSpice Simuliert. Dafür wird ein 2N3055 verwendet, welcher ähnliche Eigenschaften wie der Bipolartransistor im Labor vorweist.  
-Der Basisstrom wird allerdings über eine Ideale Stromquelle festgelegt, jedoch mit gleichen Zeitlichen Parametern wie in der Versuchsanleitung.
+Der Basisstrom wird allerdings über eine ideale Stromquelle festgelegt, jedoch mit gleichen Zeitlichen Parametern wie in der Versuchsanleitung.
 Die Basisströme wurden mit ´´.step´´ alle in einem Diagramm Dargestellt. Dabei ist $I_B = \SI{300}{\micro\ampere}$ grün, $I_B = \SI{400}{\micro\ampere}$ blau, $I_B = \SI{500}{\micro\ampere}$ rot und $I_B = \SI{300}{\micro\ampere}$ türkis.
 \begin{figure}[H]
 	\centering
@@ -293,7 +293,7 @@ Beim Einschalten betrachten wir die steigende Flanke des Basisstroms \(I_B\).
 \end{figure}
 
 \paragraph{a)}
-Der hier sichtbare Widerstand ist durch die Wiederstände in Reihe mit dem Kollektor zurückzuführen. Die kürzeren Kennlinien bei höheren Basisströmen, liegt an dem geringeren Spannungsabfall $U_{CE}$, welche jetzt an $R_C + R_{gen}$ abfällt. 
+Der hier sichtbare Widerstand ist durch die Widerstände in Reihe mit dem Kollektor zurückzuführen. Die kürzeren Kennlinien bei höheren Basisströmen, liegt an dem geringeren Spannungsabfall $U_{CE}$, welche jetzt an $R_C + R_{gen}$ abfällt. 
 \[
 R_{\text{ges}} = R_{\text{gen}} + R_{\text{Leitung}} = \frac{\Delta U_{CE}}{\Delta I_C} = \frac{4\,\mathrm{V}}{65\,\mathrm{mA}} \approx 61.54\,\Omega
 \]
@@ -499,7 +499,7 @@ Um die verschiedenen Arbeitspunkte zu bestimmen wurde eine Arbeitsgerade in das 
 
 \vspace{1em}
 
-Anschleißend wurden folgende Werte entnommen (siehe Abbildung~\ref{fig:arbeitspunkte schaltkonfiguration}):
+Anschließend wurden folgende Werte entnommen (siehe Abbildung~\ref{fig:arbeitspunkte schaltkonfiguration}):
 
 \begin{table}[H]
 \centering
