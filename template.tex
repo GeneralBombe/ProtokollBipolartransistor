@@ -269,11 +269,13 @@ Die Basisströme wurden mit ´´.step´´ alle in einem Diagramm Dargestellt. Da
 
 
 \subsubsection{Ausschaltzeiten}
-*** Nicht gemacht***
+Die Messungen haben im Praktikum nicht funktioniert. Daher wurde die Aufgabe mithilfe von \texttt{LTspice} simuliert und eine entsprechende Schaltung geplottet. Der Basisstrom wurde im Bereich von \(300\,\upmu\text{A}\) bis \(600\,\upmu\text{A}\) variiert. Beim Ausschalten betrachten wir die fallende Flanke des Basisstroms \(I_B\).
+
 
 
 \subsubsection{Einschaltzeiten}
-*** Nicht gemacht ***
+Beim Einschalten betrachten wir die steigende Flanke des Basisstroms \(I_B\).
+
 % C.
 \section{Auswertung}
 % C.1.1.
@@ -606,15 +608,15 @@ Die Ausschaltzeiten  \( t_a \):
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c}
-$I_B$ (µA) & $t_a$ (µs) \\
+$I_B$ (µA) & $t_a$ (ns) \\
 \hline
-600 &  46.333\\
+600 &  292\\
 \hline
-500 &  41\\
+500 &  425.6\\
 \hline
-400 &  31.88\\
+400 &  778.2\\
 \hline
-300 &  43.8\\
+300 &  1300.2\\
 \end{tabular}
 \caption{Ausschaltzeiten bei verschiedenen Basisströmen}
 \label{tab:Schaltzeiten}
