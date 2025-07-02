@@ -501,19 +501,32 @@ Anschleißend wurden folgende Werte entnommen (siehe Abbildung~\ref{fig:arbeitsp
 
 \begin{table}[H]
 \centering
-\begin{tabular}{c|c|c|c|c}
-$I_B$ (µA) & $U_{CE}$ (in V) & $U_{CE}$ (in V) & $I_C$ (in mA) & $\beta = \frac{I_C}{I_B}$ \\ \hline
-600 & 0,2 & **vergleichswerte** &  &  \\ \hline
-500 & 1,35 &  &  &  \\ \hline
-400 & 3,0 &  &  &  \\ \hline
-300 & 4,8 &  &  &  **vergleichswerte**
+\begin{tabular}{c|c}
+$I_B$ (µA) & $U_{CE}$ (in V aus Arbeitsgerade) \\ \hline
+600 & 0,2  \\ \hline
+500 & 1,35 \\ \hline
+400 & 3,0  \\ \hline
+300 & 4,8 
+\end{tabular}
+\caption{Auswertung der Arbeitspunkte bei verschiedenen Basisströmen}
+\label{tab:arbeitspunkte}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c}
+$I_B$ (µA) & $U_{CE}$ (in V aus Simulation) & $I_C$ (in mA) & $\beta = \frac{I_C}{I_B}$ \\ \hline
+600 & 7,8V & 42mA \\ \hline
+500 & 7,2V & 35mA \\ \hline
+400 & 6,2V & 28mA \\ \hline
+300 & 5,8V & 22mA
 \end{tabular}
 \caption{Auswertung der Arbeitspunkte bei verschiedenen Basisströmen}
 \label{tab:arbeitspunkte}
 \end{table}
 
 
-Die gemessenen Werte stimmen im Rahmen der Zeichen- und Messgenauigkeit überein.
+Die Werte stimmen nicht mit den Vergleichsergebnissen überein, da zur Simulation ein anderer Bipolartransistor genutzt wurde.
 
 \paragraph{b)}
 
