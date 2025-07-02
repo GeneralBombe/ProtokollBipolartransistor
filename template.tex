@@ -262,18 +262,20 @@ Die Basisströme wurden mit ´´.step´´ alle in einem Diagramm Dargestellt. Da
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{Figures/LTSpiceTime300u.png}
-	\caption{Zeitlicher Verlauf von $I_B$ (oben), $I_C$ (mitte), $U_{CE}$ (unten)}
+	\includegraphics[width=1.0\textwidth]{Figures/LTSpiceTime300u.png}
+	\caption{Zeitlicher Verlauf von $I_B$ (unten), $I_C$ (oben), $U_{CE}$ (mitte).}
 	\label{fig:300uVerlauf3}
 \end{figure}
 
 
 \subsubsection{Ausschaltzeiten}
-*** Nicht gemacht***
+Die Messungen haben im Praktikum nicht funktioniert. Daher wurde die Aufgabe mithilfe von \texttt{LTspice} simuliert und eine entsprechende Schaltung geplottet. Der Basisstrom wurde im Bereich von \(300\,\upmu\text{A}\) bis \(600\,\upmu\text{A}\) variiert. Beim Ausschalten betrachten wir die fallende Flanke des Basisstroms \(I_B\).
+
 
 
 \subsubsection{Einschaltzeiten}
-*** Nicht gemacht ***
+Beim Einschalten betrachten wir die steigende Flanke des Basisstroms \(I_B\).
+
 % C.
 \section{Auswertung}
 % C.1.1.
@@ -425,7 +427,7 @@ Für $U_{CE} = \SI{10}{\volt}$ ergibt sich:
 I_C(10\,\mathrm{V}) = \frac{\SI{20}{\volt}- \SI{10}{\volt}}{\SI{1}{\kilo\ohm}} = \SI{10}{\milli\ampere}
 \]
 
-\vspace{1em}
+\vspace{1em}smardie 
 Die Arbeitsgerade verläuft also von $(U_{CE}, I_C) = (\SI{0}{\volt}, \SI{20}{\milli\ampere})$ durch $(\SI{10}{\volt}, \SI{10}{\milli\ampere})$.
 
 \paragraph{b)}
@@ -560,13 +562,7 @@ Für ein steigendes $I_B$ wird der Transistor somit immer mehr zu einem idealen 
 
 \subsubsection{Schaltzeiten}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\textwidth]{Schaltzeiten.png}
-	\caption{Simulierung der Schaltzeiten}
-	\label{fig:Schaltzeiten}
-\end{figure}
-
+Für die relevanten Strom und Spannungsverläufe siehe Abbildung \ref{fig:300uVerlauf3}.
 \paragraph{a)}
 
 Die Speicherzeit \( t_s \) ergibt sich aus:
@@ -625,15 +621,15 @@ Die Ausschaltzeiten  \( t_a \):
 \begin{table}[H]
 \centering
 \begin{tabular}{c|c}
-$I_B$ (µA) & $t_a$ (µs) \\
+$I_B$ (µA) & $t_a$ (ns) \\
 \hline
-600 &  46.333\\
+600 &  292\\
 \hline
-500 &  41\\
+500 &  425.6\\
 \hline
-400 &  31.88\\
+400 &  778.2\\
 \hline
-300 &  43.8\\
+300 &  1300.2\\
 \end{tabular}
 \caption{Ausschaltzeiten bei verschiedenen Basisströmen}
 \label{tab:Schaltzeiten}
@@ -646,5 +642,6 @@ $I_B$ (µA) & $t_a$ (µs) \\
 
 %----------------------------------------------------------------------------------------
 \includepdf[pages={1}]{Vorbereitung.pdf}
+\includepdf[pages={1}]{simulation.pdf}
 
 \end{document}
